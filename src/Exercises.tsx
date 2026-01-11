@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from './LanguageContext';
-import { Pencil, ChevronDown, ChevronUp, Book } from 'lucide-react';
+import { Pencil, ChevronDown, ChevronUp, Book, FileText } from 'lucide-react';
+import Lesson1Exercises from './Lesson1Exercises';
 
 const Exercises = () => {
   const { t } = useLanguage();
   const [is202Expanded, setIs202Expanded] = useState(false);
+  const [activeLesson, setActiveLesson] = useState<number | null>(null);
 
   return (
     <div className="space-y-8 my-12 max-w-4xl mx-auto">
-      <section className="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center min-h-[300px]">
+      <section className="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center min-h-[300px]">
         <div className="bg-yellow-50 p-6 rounded-full mb-6">
             <Pencil size={64} className="text-yellow-500" />
         </div>
@@ -17,15 +19,15 @@ const Exercises = () => {
           {t('exercises.title')}
         </h2>
         <p className="text-xl text-slate-500 italic mb-8">
-            {t('exercises.comingSoon')}
+            {activeLesson ? t('exercises.lesson1') : t('exercises.comingSoon')}
         </p>
 
         {/* Collapsible Section ITALIAN 202 */}
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-3xl">
             <motion.button
                 onClick={() => setIs202Expanded(!is202Expanded)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 className={`w-full flex items-center justify-between p-6 rounded-xl border-2 transition-all shadow-sm ${
                     is202Expanded 
                         ? 'bg-indigo-50 border-indigo-200 text-indigo-800' 
@@ -44,26 +46,40 @@ const Exercises = () => {
             <AnimatePresence>
                 {is202Expanded && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                        animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
-                        exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
                         className="overflow-hidden"
                     >
-                        <div className="p-6 bg-white rounded-xl border border-slate-100 shadow-inner">
-                            <p className="text-slate-500 italic text-center">
-                                Contenuto del corso 202 in arrivo...
-                            </p>
-                            {/* Placeholder for actual exercises links/content */}
-                            <ul className="mt-4 space-y-2">
-                                <li className="p-3 bg-slate-50 rounded-lg text-slate-400 text-sm flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-slate-300"></span>
-                                    Esercizio 1 (Placeholder)
-                                </li>
-                                <li className="p-3 bg-slate-50 rounded-lg text-slate-400 text-sm flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-slate-300"></span>
-                                    Esercizio 2 (Placeholder)
-                                </li>
-                            </ul>
+                        <div className="p-6 bg-slate-50 rounded-b-xl border-x border-b border-slate-200 shadow-inner">
+                            {/* Lesson Buttons */}
+                            <div className="flex gap-4 mb-6">
+                                <button 
+                                    onClick={() => setActiveLesson(activeLesson === 1 ? null : 1)}
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold shadow-sm transition-all ${
+                                        activeLesson === 1 
+                                            ? 'bg-indigo-600 text-white' 
+                                            : 'bg-white text-indigo-600 hover:bg-indigo-50'
+                                    }`}
+                                >
+                                    <FileText size={18} />
+                                    {t('exercises.lesson1')}
+                                </button>
+                            </div>
+
+                            {/* Content Area */}
+                            <AnimatePresence mode='wait'>
+                                {activeLesson === 1 && (
+                                    <motion.div
+                                        key="lesson1"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                    >
+                                        <Lesson1Exercises />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </motion.div>
                 )}

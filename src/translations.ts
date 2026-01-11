@@ -14,7 +14,8 @@ export const translations = {
     exercises: {
       title: "Esercizi",
       comingSoon: "Presto disponibili!",
-      italian202: "Esercizi ITALIAN 202"
+      italian202: "Esercizi ITALIAN 202",
+      lesson1: "Lezione 1"
     },
     common: {
       masculine: "Maschile",
@@ -120,7 +121,8 @@ export const translations = {
     exercises: {
       title: "Exercises",
       comingSoon: "Coming Soon!",
-      italian202: "Exercises ITALIAN 202"
+      italian202: "Exercises ITALIAN 202",
+      lesson1: "Lesson 1"
     },
     common: {
       masculine: "Masculine",
