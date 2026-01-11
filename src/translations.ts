@@ -62,6 +62,7 @@ export const translations = {
       noteText: "Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono -isc- tra la radice e la desinenza nelle persone singolari e nella 3^ plurale.",
       auxiliary: "Ausiliare",
       pastParticiple: "Participio Passato",
+      irregularPPTitle: "Principali Participi Passati Irregolari",
       reflexiveNote: "I verbi riflessivi usano sempre l'ausiliare 'essere' nei tempi composti.",
       ppAgreement: "Il participio passato concorda in genere e numero con il soggetto quando si usa 'essere'."
     },
@@ -136,7 +137,7 @@ export const translations = {
         f_cons: "Before a consonant (la casa, le case)",
         f_vowel: "Before a vowel (l'amica, le amiche)",
         un_m: "Before a vowel or consonant (un libro, un amico)",
-        uno_m: "Before s+cons., z, gn, ps, pn, y (uno zaino, uno studente)",
+        uno_m: "Before s+cons., z, gn, ps, pn, x, y (uno zaino, uno studente)",
         una_f: "Before a consonant (una mela)",
         un_f: "Before a vowel (un'amica)"
       }
@@ -157,6 +158,7 @@ export const translations = {
       noteText: "Some verbs of the 3rd conjugation (capire, finire, preferire, pulire) add -isc- between the stem and the ending in the singular persons and the 3rd plural.",
       auxiliary: "Auxiliary",
       pastParticiple: "Past Participle",
+      irregularPPTitle: "Main Irregular Past Participles",
       reflexiveNote: "Reflexive verbs always use the auxiliary 'essere' (to be) in compound tenses.",
       ppAgreement: "The past participle agrees in gender and number with the subject when using 'essere'."
     },

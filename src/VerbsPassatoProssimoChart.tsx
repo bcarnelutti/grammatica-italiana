@@ -4,6 +4,37 @@ import { ExternalLink } from 'lucide-react';
 const VerbsPassatoProssimoChart = () => {
   const { t } = useLanguage();
 
+  const irregulars = [
+    { infinitive: 'accendere', pp: 'acceso' },
+    { infinitive: 'aprire', pp: 'aperto' },
+    { infinitive: 'bere', pp: 'bevuto' },
+    { infinitive: 'chiedere', pp: 'chiesto' },
+    { infinitive: 'chiudere', pp: 'chiuso' },
+    { infinitive: 'correre', pp: 'corso' },
+    { infinitive: 'decidere', pp: 'deciso' },
+    { infinitive: 'dire', pp: 'detto' },
+    { infinitive: 'essere', pp: 'stato' },
+    { infinitive: 'fare', pp: 'fatto' },
+    { infinitive: 'leggere', pp: 'letto' },
+    { infinitive: 'mettere', pp: 'messo' },
+    { infinitive: 'morire', pp: 'morto' },
+    { infinitive: 'nascere', pp: 'nato' },
+    { infinitive: 'offrire', pp: 'offerto' },
+    { infinitive: 'perdere', pp: 'perso' },
+    { infinitive: 'prendere', pp: 'preso' },
+    { infinitive: 'rimanere', pp: 'rimasto' },
+    { infinitive: 'rispondere', pp: 'risposto' },
+    { infinitive: 'rompere', pp: 'rotto' },
+    { infinitive: 'scegliere', pp: 'scelto' },
+    { infinitive: 'scrivere', pp: 'scritto' },
+    { infinitive: 'spegnere', pp: 'spento' },
+    { infinitive: 'stare', pp: 'stato' },
+    { infinitive: 'vedere', pp: 'visto' },
+    { infinitive: 'venire', pp: 'venuto' },
+    { infinitive: 'vincere', pp: 'vinto' },
+    { infinitive: 'vivere', pp: 'vissuto' },
+  ];
+
   return (
     <div className="space-y-12">
       <section className="my-12 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
@@ -79,6 +110,19 @@ const VerbsPassatoProssimoChart = () => {
                 <div className="text-amber-700">-ERE &rarr; -UTO <span className="text-xs text-slate-500 block">(vendere &rarr; venduto)</span></div>
                 <div className="text-purple-700">-IRE &rarr; -ITO <span className="text-xs text-slate-500 block">(dormire &rarr; dormito)</span></div>
              </div>
+        </div>
+
+        {/* IRREGULAR LIST */}
+        <div className="mt-12">
+            <h4 className="text-2xl font-bold text-slate-800 text-center mb-8">{t('verbs.irregularPPTitle')}</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {irregulars.map((item) => (
+                    <div key={item.infinitive} className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex flex-col items-center">
+                        <span className="text-xs text-slate-400 font-medium italic">{item.infinitive}</span>
+                        <span className="text-lg font-bold text-indigo-600">{item.pp}</span>
+                    </div>
+                ))}
+            </div>
         </div>
       </section>
     </div>
