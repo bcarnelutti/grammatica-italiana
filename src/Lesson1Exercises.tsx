@@ -102,7 +102,12 @@ const Lesson1Exercises = () => {
       {/* Exercise 1 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 1: Interessi</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con il pronome corretto + interessa/interessano (es: mi interessa, ti interessano...)</h4>
+        <h4 className="font-bold text-slate-700 mb-2 flex flex-col sm:flex-row sm:items-center gap-2">
+          <span>A. Completa con il pronome corretto + interessa/interessano.</span>
+          <span className="text-sm font-normal text-slate-500 italic">
+            (Es: (A me) __________ lo sport. &rarr; mi interessa)
+          </span>
+        </h4>
         <ExerciseItem part={{ type: 'fill', question: '(A noi) __________ comprare gli addobbi per l’albero.', answer: 'ci interessa/non ci interessa' }} index={0} />
         <ExerciseItem part={{ type: 'fill', question: '(A te) __________ le feste storiche.', answer: 'ti interessano/non ti interessano' }} index={1} />
         <ExerciseItem part={{ type: 'fill', question: '(A me) __________ i concerti rock.', answer: 'mi interessano/non mi interessano' }} index={2} />
