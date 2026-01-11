@@ -27,8 +27,8 @@ const irregularVerbs: IrregularVerb[] = [
   { infinitive: 'Spegnere', meaning: 'to turn off', conjugation: ['spengo', 'spegni', 'spegne', 'spegniamo', 'spegnete', 'spengono'] },
   { infinitive: 'Tenere', meaning: 'to keep/hold', conjugation: ['tengo', 'tieni', 'tiene', 'teniamo', 'tenete', 'tengono'] },
   { infinitive: 'Volere', meaning: 'to want', conjugation: ['voglio', 'vuoi', 'vuole', 'vogliamo', 'volete', 'vogliono'] },
-  { infinitive: 'Potere', meaning: 'to can/be able', conjugation: ['posso', 'puoi', 'può', 'possiamo', 'potete', 'possono'] },
-  { infinitive: 'Dovere', meaning: 'to must/have to', conjugation: ['devo', 'devi', 'deve', 'dobbiamo', 'dovete', 'devono'] },
+  { infinitive: 'Potere', meaning: 'to be able to', conjugation: ['posso', 'puoi', 'può', 'possiamo', 'potete', 'possono'] },
+  { infinitive: 'Dovere', meaning: 'to have to', conjugation: ['devo', 'devi', 'deve', 'dobbiamo', 'dovete', 'devono'] },
 ];
 
 const iscVerbs: IrregularVerb[] = [

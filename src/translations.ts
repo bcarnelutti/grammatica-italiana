@@ -63,7 +63,7 @@ export const translations = {
       reflexiveCompoundNote: "Nei tempi composti (come il Passato Prossimo), i verbi riflessivi richiedono sempre l'ausiliare 'essere'. Il participio passato deve concordare in genere e numero con il soggetto.",
       casaDiEssereTitle: "La Casa di Essere",
       casaDiEssereDesc: "I verbi che abitano nella 'Casa di Essere' usano sempre l'ausiliare 'essere' nei tempi composti (Passato Prossimo, ecc.). Sono generalmente verbi di movimento, stato, cambiamento di stato, o verbi intransitivi.",
-      goToCasaDiEssere: "Vai alla La Casa di Essere",
+      goToCasaDiEssere: "Vai alla Casa di Essere",
       noteTitle: "Nota: Verbi in -IRE con -ISC-",
       noteText: "Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono -isc- tra la radice e la desinenza nelle persone singolari e nella 3^ plurale.",
       irregularVerbsTitle: "Verbi Irregolari Comuni",
