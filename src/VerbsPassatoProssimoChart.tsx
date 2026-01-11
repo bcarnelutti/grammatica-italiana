@@ -1,17 +1,27 @@
 import { useLanguage } from './LanguageContext';
-import { useChartContext, type ViewState } from './ChartContext';
-import { Home } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const VerbsPassatoProssimoChart = () => {
   const { t } = useLanguage();
-  const { setView } = useChartContext();
 
   return (
     <div className="space-y-12">
       <section className="my-12 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
-        <h2 className="text-4xl font-serif text-center mb-12 text-gray-800 underline decoration-amber-500 underline-offset-8">
+        <h2 className="text-4xl font-serif text-center mb-4 text-gray-800 underline decoration-amber-500 underline-offset-8">
           {t('verbs.passatoProssimoTitle')}
         </h2>
+
+        <div className="text-center mb-12">
+            <a 
+                href="https://www.patreon.com/posts/la-casa-46778875" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-bold underline transition-colors"
+            >
+                <ExternalLink size={18} />
+                {t('verbs.casaDiEssereTitle')}
+            </a>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-8">
             {/* AVERE */}
@@ -58,15 +68,7 @@ const VerbsPassatoProssimoChart = () => {
                         <tr><td className="py-2 font-bold text-blue-900">loro</td><td>sono</td><td className="italic">andati/e</td></tr>
                     </tbody>
                 </table>
-                <p className="mt-4 text-xs text-blue-800 font-bold text-center mb-6">{t('verbs.ppAgreement')}</p>
-                
-                <button 
-                    onClick={() => setView('verbs_casa_di_essere')}
-                    className="mt-auto mx-auto flex items-center gap-2 px-6 py-3 bg-white border-2 border-indigo-100 text-indigo-700 rounded-full font-bold shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
-                >
-                    <Home size={20} />
-                    {t('verbs.goToCasaDiEssere')}
-                </button>
+                <p className="mt-4 text-xs text-blue-800 font-bold text-center">{t('verbs.ppAgreement')}</p>
             </div>
         </div>
         
