@@ -13,7 +13,7 @@ import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import { ChartProvider, useChartContext, ViewState } from './ChartContext';
+import { ChartProvider, useChartContext, type ViewState } from './ChartContext';
 
 // --- Components ---
 
