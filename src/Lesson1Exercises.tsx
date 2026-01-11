@@ -103,11 +103,13 @@ const Lesson1Exercises = () => {
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 1: Interessi</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con il pronome corretto + interessa/interessano (es: mi interessa, ti interessano...)</h4>
-        <ExerciseItem part={{ type: 'fill', question: '(A me) __________ il Festival di Sanremo.', answer: 'mi interessa/non mi interessa' }} index={0} />
+        <ExerciseItem part={{ type: 'fill', question: '(A noi) __________ comprare gli addobbi per l’albero.', answer: 'ci interessa/non ci interessa' }} index={0} />
         <ExerciseItem part={{ type: 'fill', question: '(A te) __________ le feste storiche.', answer: 'ti interessano/non ti interessano' }} index={1} />
-        <ExerciseItem part={{ type: 'fill', question: '(A lui) __________ provare dolci diversi e spettacolari.', answer: 'gli interessa/non gli interessa' }} index={2} />
-        <ExerciseItem part={{ type: 'fill', question: '(A noi) __________ comprare gli addobbi per l’albero.', answer: 'ci interessa/non ci interessa' }} index={3} />
-        <ExerciseItem part={{ type: 'fill', question: '(A voi) __________ scoprire nuovi autori.', answer: 'vi interessa/non vi interessa' }} index={4} />
+        <ExerciseItem part={{ type: 'fill', question: '(A me) __________ i concerti rock.', answer: 'mi interessano/non mi interessano' }} index={2} />
+        <ExerciseItem part={{ type: 'fill', question: '(A voi) __________ scoprire nuovi autori.', answer: 'vi interessa/non vi interessa' }} index={3} />
+        <ExerciseItem part={{ type: 'fill', question: '(A lui) __________ provare dolci diversi e spettacolari.', answer: 'gli interessa/non gli interessa' }} index={4} />
+        <ExerciseItem part={{ type: 'fill', question: '(A loro) __________ i libri di storia.', answer: 'gli interessano/non gli interessano' }} index={5} />
+        <ExerciseItem part={{ type: 'fill', question: '(A me) __________ il Festival di Sanremo.', answer: 'mi interessa/non mi interessa' }} index={6} />
         
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scrivi 3 frasi su di te: 2 cose che ti interessano, 1 cosa che non ti interessa.</p>
