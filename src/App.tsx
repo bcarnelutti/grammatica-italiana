@@ -8,6 +8,9 @@ import VerbsPresentChart from './VerbsPresentChart';
 import VerbsPassatoProssimoChart from './VerbsPassatoProssimoChart';
 import VerbsImperfettoChart from './VerbsImperfettoChart';
 import VerbsFuturoChart from './VerbsFuturoChart';
+import VerbsCondizionalePresenteChart from './VerbsCondizionalePresenteChart';
+import VerbsCongiuntivoPresenteChart from './VerbsCongiuntivoPresenteChart';
+import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
@@ -158,6 +161,18 @@ const MainContent = () => {
 
   if (view === 'verbs_futuro') {
     return <VerbsFuturoChart />;
+  }
+
+  if (view === 'verbs_condizionale_presente') {
+    return <VerbsCondizionalePresenteChart />;
+  }
+
+  if (view === 'verbs_congiuntivo_presente') {
+    return <VerbsCongiuntivoPresenteChart />;
+  }
+
+  if (view === 'verbs_congiuntivo_passato') {
+    return <VerbsCongiuntivoPassatoChart />;
   }
 
   if (view === 'verbs_reflexive') {

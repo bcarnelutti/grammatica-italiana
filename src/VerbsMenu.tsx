@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useChartContext, type ViewState } from './ChartContext';
 import { useLanguage } from './LanguageContext';
-import { BookOpen, Clock, Activity, ArrowRight, RotateCw } from 'lucide-react';
+import { BookOpen, Clock, Activity, ArrowRight, RotateCw, GitBranch, Zap, History } from 'lucide-react';
 
 const VerbsMenu = () => {
   const { setView } = useChartContext();
@@ -12,6 +12,9 @@ const VerbsMenu = () => {
     { id: 'verbs_passato_prossimo', label: t('verbsMenu.passato_prossimo'), icon: Clock, color: 'text-amber-600', bg: 'bg-amber-50' },
     { id: 'verbs_imperfetto', label: t('verbsMenu.imperfetto'), icon: BookOpen, color: 'text-blue-600', bg: 'bg-blue-50' },
     { id: 'verbs_futuro', label: t('verbsMenu.futuro'), icon: ArrowRight, color: 'text-purple-600', bg: 'bg-purple-50' },
+    { id: 'verbs_condizionale_presente', label: t('verbsMenu.condizionale_presente'), icon: GitBranch, color: 'text-orange-600', bg: 'bg-orange-50' },
+    { id: 'verbs_congiuntivo_presente', label: t('verbsMenu.congiuntivo_presente'), icon: Zap, color: 'text-teal-600', bg: 'bg-teal-50' },
+    { id: 'verbs_congiuntivo_passato', label: t('verbsMenu.congiuntivo_passato'), icon: History, color: 'text-cyan-600', bg: 'bg-cyan-50' },
     { id: 'verbs_reflexive', label: t('verbsMenu.reflexive'), icon: RotateCw, color: 'text-pink-600', bg: 'bg-pink-50' },
   ] as const;
 

@@ -25,6 +25,9 @@ export const translations = {
       passato_prossimo: "Passato Prossimo",
       imperfetto: "Imperfetto",
       futuro: "Futuro Semplice",
+      condizionale_presente: "Condizionale Presente",
+      congiuntivo_presente: "Congiuntivo Presente",
+      congiuntivo_passato: "Congiuntivo Passato",
       reflexive: "Verbi Riflessivi"
     },
     articles: {
@@ -47,6 +50,9 @@ export const translations = {
       passatoProssimoTitle: "Passato Prossimo",
       imperfettoTitle: "Imperfetto",
       futuroTitle: "Futuro Semplice",
+      condizionalePresenteTitle: "Condizionale Presente",
+      congiuntivoPresenteTitle: "Congiuntivo Presente",
+      congiuntivoPassatoTitle: "Congiuntivo Passato",
       reflexiveTitle: "Verbi Riflessivi",
       noteTitle: "Nota: Verbi in -IRE con -ISC-",
       noteText: "Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono -isc- tra la radice e la desinenza nelle persone singolari e nella 3^ plurale.",
@@ -110,91 +116,9 @@ export const translations = {
       passato_prossimo: "Present Perfect (Passato Prossimo)",
       imperfetto: "Imperfect (Imperfetto)",
       futuro: "Simple Future",
-      reflexive: "Reflexive Verbs"
-    },
-    articles: {
-      definiteTitle: "Definite Articles",
-      indefiniteTitle: "Indefinite Articles",
-      rules: {
-        m_cons: "Before a consonant (il libro, i libri)",
-        m_special: "Before s+cons., z, gn, ps, pn, x, y (lo studente, gli studenti)",
-        m_vowel: "Before a vowel (l'amico, gli amici)",
-        f_cons: "Before a consonant (la casa, le case)",
-        f_vowel: "Before a vowel (l'amica, le amiche)",
-        un_m: "Before a vowel or consonant (un libro, un amico)",
-        uno_m: "Before s+cons., z, gn, ps, pn, y (uno zaino, uno studente)",
-        una_f: "Before a consonant (una mela)",
-        un_f: "Before a vowel (un'amica)"
-      }
-    },
-    verbs: {
-      presentTitle: "Present Indicative",
-      passatoProssimoTitle: "Passato Prossimo (Present Perfect)",
-      imperfettoTitle: "Imperfetto (Imperfect)",
-      futuroTitle: "Simple Future",
-      reflexiveTitle: "Reflexive Verbs",
-      noteTitle: "Note: Verbs in -IRE with -ISC-",
-      noteText: "Some verbs of the 3rd conjugation (capire, finire, preferire, pulire) add -isc- between the stem and the ending in the singular persons and the 3rd plural.",
-      auxiliary: "Auxiliary",
-      pastParticiple: "Past Participle",
-      reflexiveNote: "Reflexive verbs always use the auxiliary 'essere' (to be) in compound tenses.",
-      ppAgreement: "The past participle agrees in gender and number with the subject when using 'essere'."
-    },
-    prepositions: {
-      simpleTitle: "Preposizioni Semplici",
-      articulatedTitle: "Preposizioni Articolate",
-      labels: {
-        di: "di (possesso, origine)",
-        a: "a (moto/stato in luogo)",
-        da: "da (provenienza)",
-        in: "in (stato/moto in luogo)",
-        con: "con (compagnia/mezzo)",
-        su: "su (posizione/argomento)",
-        per: "per (scopo/destinazione)",
-        tra: "tra / fra (posizione/tempo)"
-      }
-    },
-    vocabularyMenu: {
-      clothing: "Abbigliamento",
-      health: "Salute",
-      travel: "Viaggi",
-      education: "Istruzione",
-      body: "Il corpo",
-      nature: "Natura",
-      celebrations: "Feste",
-      sports: "Sport"
-    },
-    controls: {
-      expandAll: "Espandi tutto",
-      collapseAll: "Comprimi tutto"
-    }
-  },
-  en: {
-    title: "Italian Grammar",
-    subtitle: "Interactive charts to learn Italian grammar.",
-    footer: "Created for Italian language students",
-    nav: {
-      articles: "Articles",
-      verbs: "Verbs",
-      prepositions: "Prepositions",
-      vocabulary: "Vocabulary",
-      back: "Back"
-    },
-    common: {
-      masculine: "Masculine",
-      feminine: "Feminine",
-      singular: "Singular",
-      plural: "Plural",
-      usage: "Usage",
-      example: "Example",
-      gender: "Gender",
-      pronoun: "Pronoun"
-    },
-    verbsMenu: {
-      present: "Present Tense",
-      passato_prossimo: "Present Perfect (Passato Prossimo)",
-      imperfetto: "Imperfect (Imperfetto)",
-      futuro: "Simple Future",
+      condizionale_presente: "Present Conditional",
+      congiuntivo_presente: "Present Subjunctive",
+      congiuntivo_passato: "Past Subjunctive",
       reflexive: "Reflexive Verbs"
     },
     articles: {
@@ -217,6 +141,9 @@ export const translations = {
       passatoProssimoTitle: "Passato Prossimo (Present Perfect)",
       imperfettoTitle: "Imperfetto (Imperfect)",
       futuroTitle: "Simple Future",
+      condizionalePresenteTitle: "Present Conditional",
+      congiuntivoPresenteTitle: "Present Subjunctive",
+      congiuntivoPassatoTitle: "Past Subjunctive",
       reflexiveTitle: "Reflexive Verbs",
       noteTitle: "Note: Verbs in -IRE with -ISC-",
       noteText: "Some verbs of the 3rd conjugation (capire, finire, preferire, pulire) add -isc- between the stem and the ending in the singular persons and the 3rd plural.",
