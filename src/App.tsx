@@ -1,0 +1,220 @@
+import { useState, createContext, useContext } from 'react';
+import { motion } from 'framer-motion';
+import { Globe, Shirt, Stethoscope, Plane, GraduationCap, User, Trees, Gift, Dumbbell } from 'lucide-react';
+
+import ArticlesChart from './ArticlesChart';
+import VerbsPresentChart from './VerbsPresentChart';
+import PrepositionsChart from './PrepositionsChart';
+import VocabularyChart from './VocabularyChart';
+
+import { LanguageProvider, useLanguage } from './LanguageContext';
+
+// --- Context Definition ---
+type ViewState = 
+  | 'articles'
+  | 'verbs_present'
+  | 'prepositions'
+  | 'vocabulary_menu' 
+  | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports';
+
+interface ChartContextType {
+  // Navigation State
+  view: ViewState;
+  setView: React.Dispatch<React.SetStateAction<ViewState>>;
+}
+
+const ChartContext = createContext<ChartContextType | null>(null);
+
+const ChartProvider = ({ children }: { children: React.ReactNode }) => {
+  const [view, setView] = useState<ViewState>('articles');
+
+  return (
+    <ChartContext.Provider value={{ view, setView }}>
+      {children}
+    </ChartContext.Provider>
+  );
+};
+
+const useChartContext = () => {
+  const context = useContext(ChartContext);
+  if (!context) throw new Error("useChartContext must be used within a ChartProvider");
+  return context;
+};
+
+// --- Components ---
+
+const LanguageSwitcher = () => {
+  const { language, setLanguage } = useLanguage();
+
+  return (
+    <button
+      onClick={() => setLanguage(language === 'it' ? 'en' : 'it')}
+      className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md text-slate-600 hover:text-indigo-600 font-medium border border-slate-100 transition-all hover:shadow-lg"
+    >
+      <Globe size={18} />
+      <span>{language === 'it' ? 'IT' : 'EN'}</span>
+    </button>
+  );
+};
+
+const Navigation = () => {
+  const { view, setView } = useChartContext();
+  const { t } = useLanguage();
+  const isVocabActive = ['vocabulary_menu', 'vocab_clothing', 'vocab_health', 'vocab_travel', 'vocab_education', 'vocab_body', 'vocab_nature', 'vocab_celebrations', 'vocab_sports'].includes(view);
+
+  return (
+    <div className="flex justify-center mb-12 space-x-6 flex-wrap gap-y-4">
+      <button
+        onClick={() => setView('articles')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          view === 'articles'
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.articles')}
+      </button>
+      <button
+        onClick={() => setView('verbs_present')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          view === 'verbs_present'
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.verbs')}
+      </button>
+      <button
+        onClick={() => setView('prepositions')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          view === 'prepositions'
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.prepositions')}
+      </button>
+      <button
+        onClick={() => setView('vocabulary_menu')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          isVocabActive
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.vocabulary')}
+      </button>
+    </div>
+  );
+};
+
+const VocabularyMenu = () => {
+  const { setView } = useChartContext();
+  const { t } = useLanguage();
+
+  const menuItems = [
+    { id: 'vocab_clothing', label: t('vocabularyMenu.clothing'), icon: Shirt, color: 'text-pink-600' },
+    { id: 'vocab_health', label: t('vocabularyMenu.health'), icon: Stethoscope, color: 'text-red-600' },
+    { id: 'vocab_travel', label: t('vocabularyMenu.travel'), icon: Plane, color: 'text-sky-600' },
+    { id: 'vocab_education', label: t('vocabularyMenu.education'), icon: GraduationCap, color: 'text-indigo-600' },
+    { id: 'vocab_body', label: t('vocabularyMenu.body'), icon: User, color: 'text-orange-600' },
+    { id: 'vocab_nature', label: t('vocabularyMenu.nature'), icon: Trees, color: 'text-emerald-600' },
+    { id: 'vocab_celebrations', label: t('vocabularyMenu.celebrations'), icon: Gift, color: 'text-purple-600' },
+    { id: 'vocab_sports', label: t('vocabularyMenu.sports'), icon: Dumbbell, color: 'text-blue-600' },
+  ] as const;
+
+  return (
+    <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      {menuItems.map((item) => (
+        <motion.button
+          key={item.id}
+          onClick={() => setView(item.id as ViewState)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center gap-4 group"
+        >
+          <div className={`p-4 rounded-full bg-slate-50 group-hover:bg-slate-100 transition-colors ${item.color}`}>
+             <item.icon size={32} />
+          </div>
+          <h3 className="text-xl font-bold text-slate-800">
+            {item.label}
+          </h3>
+        </motion.button>
+      ))}
+    </div>
+  );
+};
+
+const HeaderControls = () => {
+    return (
+        <div className="fixed top-8 right-8 z-[100] flex flex-col gap-4 items-end">
+            <LanguageSwitcher />
+        </div>
+    )
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <ChartProvider>
+        <AppContent />
+      </ChartProvider>
+    </LanguageProvider>
+  );
+}
+
+const AppContent = () => {
+  const { t } = useLanguage();
+
+  return (
+    <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+      <HeaderControls />
+      <div className="max-w-7xl mx-auto">
+        <header className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+            {t('title')}
+          </h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+            {t('subtitle')}
+          </p>
+          <Navigation />
+        </header>
+
+        <MainContent />
+        
+        <footer className="mt-24 text-center text-slate-400 text-sm">
+          {t('footer')}
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+const MainContent = () => {
+  const { view } = useChartContext();
+
+  if (view === 'articles') {
+    return <ArticlesChart />;
+  }
+
+  if (view === 'verbs_present') {
+    return <VerbsPresentChart />;
+  }
+
+  if (view === 'prepositions') {
+    return <PrepositionsChart />;
+  }
+
+  if (view === 'vocabulary_menu') {
+    return <VocabularyMenu />;
+  }
+
+  if (view.startsWith('vocab_')) {
+     const topic = view.replace('vocab_', '') as any;
+     return <VocabularyChart topic={topic} />;
+  }
+
+  return null;
+};
+
+export default App;
