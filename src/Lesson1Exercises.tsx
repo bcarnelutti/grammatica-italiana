@@ -10,12 +10,6 @@ interface ExercisePart {
   placeholder?: string;
 }
 
-interface Exercise {
-  id: number;
-  title: string;
-  parts: ExercisePart[];
-}
-
 const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) => {
   const [userAnswer, setUserAnswer] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -33,12 +27,6 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
     
     setIsCorrect(correctOptions.includes(normalizedUser));
     setIsChecked(true);
-  };
-
-  const reset = () => {
-    setIsChecked(false);
-    setIsCorrect(false);
-    setUserAnswer('');
   };
 
   return (
@@ -113,7 +101,7 @@ const Lesson1Exercises = () => {
     <div className="space-y-8">
       {/* Exercise 1 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">1) Mi interessa / Non mi interessa</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 1: Mi interessa / Non mi interessa</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: mi interessa / mi interessano / non mi interessa / non mi interessano</h4>
         <ExerciseItem part={{ type: 'fill', question: '__________ il Festival di Sanremo.', answer: 'mi interessa/non mi interessa' }} index={0} />
         <ExerciseItem part={{ type: 'fill', question: '__________ le feste storiche.', answer: 'mi interessano/non mi interessano' }} index={1} />
@@ -128,7 +116,7 @@ const Lesson1Exercises = () => {
 
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">2) A chi interessa cosa?</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: gli / le</h4>
         <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={6} />
         <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={7} />
@@ -142,7 +130,7 @@ const Lesson1Exercises = () => {
 
       {/* Exercise 3 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">3) “Quale evento ti interessa di più?”</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 3: “Quale evento ti interessa di più?”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: mi / ti / gli / le / ci / vi / gli</h4>
         <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={11} />
         <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={12} />
@@ -154,26 +142,26 @@ const Lesson1Exercises = () => {
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Rispondi in 3–4 righe: Quale evento della lista ti interessa di più? Perché?</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={15} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={18} />
       </div>
 
       {/* Exercise 4 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">4) Domande “smartphone activity”</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 4: Domande “smartphone activity”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa le domande (inserisci la parola mancante)</h4>
-        <ExerciseItem part={{ type: 'fill', question: '__________ è? (Quando è?)', answer: 'quando' }} index={16} />
-        <ExerciseItem part={{ type: 'fill', question: 'Cosa __________ __________?', answer: 'si fa' }} index={17} />
-        <ExerciseItem part={{ type: 'fill', question: 'Quanto __________?', answer: 'costa' }} index={18} />
-        <ExerciseItem part={{ type: 'fill', question: 'Bisogna pagare l’__________ o è __________?', answer: 'ingresso/gratis' }} index={19} />
+        <ExerciseItem part={{ type: 'fill', question: '__________ è? (Quando è?)', answer: 'quando' }} index={19} />
+        <ExerciseItem part={{ type: 'fill', question: 'Cosa __________ __________?', answer: 'si fa' }} index={20} />
+        <ExerciseItem part={{ type: 'fill', question: 'Quanto __________?', answer: 'costa' }} index={21} />
+        <ExerciseItem part={{ type: 'fill', question: 'Bisogna pagare l’__________ o è __________?', answer: 'ingresso/gratis' }} index={22} />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scegli un evento e scrivi 4 domande per saperne di più.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={20} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
       </div>
 
       {/* Exercise 5 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">5) Informazioni sull’evento</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 5: Informazioni sull’evento</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa la scheda (usa le parole nel box: sabato / in centro / gratis / degustazioni / 10€ / alle 18:00)</h4>
         <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
             <div className="font-bold text-center border-b pb-2 mb-2">Evento: Festa dei Dolci</div>
@@ -186,12 +174,12 @@ const Lesson1Exercises = () => {
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scrivi 5 frasi per invitare un/a compagno/a all’evento usando le info della scheda.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={21} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={24} />
       </div>
 
       {/* Exercise 6 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">6) Dialogo a coppie</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 6: Dialogo a coppie</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa il dialogo</h4>
         <div className="space-y-2 font-mono text-sm bg-slate-50 p-4 rounded-lg">
             <p>S1: Mi interessa il __________ (evento).</p>
@@ -206,12 +194,12 @@ const Lesson1Exercises = () => {
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scrivi un nuovo dialogo (8–10 battute) con un evento diverso.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={22} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={25} />
       </div>
 
       {/* Exercise 7 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">7) Punto di vista di un bambino</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Punto di vista di un bambino</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (ero / era / c’erano / andavo / potevo / mi piaceva)</h4>
         <div className="leading-loose">
             Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a in una città piccola. 
@@ -224,12 +212,12 @@ const Lesson1Exercises = () => {
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scrivi 4 frasi su com’era il tuo quartiere/paese/città da bambino/a.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={26} />
       </div>
 
       {/* Exercise 8 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">8) Mini-paragrafo finale</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: da piccolo/a / secondo me / per esempio / perché</h4>
         <div className="leading-loose">
             <input type="text" className="border-b w-32 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (Da piccolo/a), il posto dove sono cresciuto/a era interessante 
@@ -239,7 +227,7 @@ const Lesson1Exercises = () => {
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={24} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={27} />
       </div>
     </div>
   );
