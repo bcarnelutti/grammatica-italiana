@@ -5,34 +5,34 @@ const VerbsPassatoProssimoChart = () => {
   const { t } = useLanguage();
 
   const irregulars = [
-    { infinitive: 'accendere', pp: 'acceso' },
-    { infinitive: 'aprire', pp: 'aperto' },
-    { infinitive: 'bere', pp: 'bevuto' },
-    { infinitive: 'chiedere', pp: 'chiesto' },
-    { infinitive: 'chiudere', pp: 'chiuso' },
-    { infinitive: 'correre', pp: 'corso' },
-    { infinitive: 'decidere', pp: 'deciso' },
-    { infinitive: 'dire', pp: 'detto' },
-    { infinitive: 'essere', pp: 'stato' },
-    { infinitive: 'fare', pp: 'fatto' },
-    { infinitive: 'leggere', pp: 'letto' },
-    { infinitive: 'mettere', pp: 'messo' },
-    { infinitive: 'morire', pp: 'morto' },
-    { infinitive: 'nascere', pp: 'nato' },
-    { infinitive: 'offrire', pp: 'offerto' },
-    { infinitive: 'perdere', pp: 'perso' },
-    { infinitive: 'prendere', pp: 'preso' },
-    { infinitive: 'rimanere', pp: 'rimasto' },
-    { infinitive: 'rispondere', pp: 'risposto' },
-    { infinitive: 'rompere', pp: 'rotto' },
-    { infinitive: 'scegliere', pp: 'scelto' },
-    { infinitive: 'scrivere', pp: 'scritto' },
-    { infinitive: 'spegnere', pp: 'spento' },
-    { infinitive: 'stare', pp: 'stato' },
-    { infinitive: 'vedere', pp: 'visto' },
-    { infinitive: 'venire', pp: 'venuto' },
-    { infinitive: 'vincere', pp: 'vinto' },
-    { infinitive: 'vivere', pp: 'vissuto' },
+    { infinitive: 'accendere', pp: 'acceso', meaning: 'to turn on' },
+    { infinitive: 'aprire', pp: 'aperto', meaning: 'to open' },
+    { infinitive: 'bere', pp: 'bevuto', meaning: 'to drink' },
+    { infinitive: 'chiedere', pp: 'chiesto', meaning: 'to ask' },
+    { infinitive: 'chiudere', pp: 'chiuso', meaning: 'to close' },
+    { infinitive: 'correre', pp: 'corso', meaning: 'to run' },
+    { infinitive: 'decidere', pp: 'deciso', meaning: 'to decide' },
+    { infinitive: 'dire', pp: 'detto', meaning: 'to say' },
+    { infinitive: 'essere', pp: 'stato', meaning: 'to be' },
+    { infinitive: 'fare', pp: 'fatto', meaning: 'to do/make' },
+    { infinitive: 'leggere', pp: 'letto', meaning: 'to read' },
+    { infinitive: 'mettere', pp: 'messo', meaning: 'to put' },
+    { infinitive: 'morire', pp: 'morto', meaning: 'to die' },
+    { infinitive: 'nascere', pp: 'nato', meaning: 'to be born' },
+    { infinitive: 'offrire', pp: 'offerto', meaning: 'to offer' },
+    { infinitive: 'perdere', pp: 'perso', meaning: 'to lose' },
+    { infinitive: 'prendere', pp: 'preso', meaning: 'to take' },
+    { infinitive: 'rimanere', pp: 'rimasto', meaning: 'to remain' },
+    { infinitive: 'rispondere', pp: 'risposto', meaning: 'to answer' },
+    { infinitive: 'rompere', pp: 'rotto', meaning: 'to break' },
+    { infinitive: 'scegliere', pp: 'scelto', meaning: 'to choose' },
+    { infinitive: 'scrivere', pp: 'scritto', meaning: 'to write' },
+    { infinitive: 'spegnere', pp: 'spento', meaning: 'to turn off' },
+    { infinitive: 'stare', pp: 'stato', meaning: 'to stay' },
+    { infinitive: 'vedere', pp: 'visto', meaning: 'to see' },
+    { infinitive: 'venire', pp: 'venuto', meaning: 'to come' },
+    { infinitive: 'vincere', pp: 'vinto', meaning: 'to win' },
+    { infinitive: 'vivere', pp: 'vissuto', meaning: 'to live' },
   ];
 
   return (
@@ -117,8 +117,8 @@ const VerbsPassatoProssimoChart = () => {
             <h4 className="text-2xl font-bold text-slate-800 text-center mb-8">{t('verbs.irregularPPTitle')}</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {irregulars.map((item) => (
-                    <div key={item.infinitive} className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex flex-col items-center">
-                        <span className="text-xs text-slate-400 font-medium italic">{item.infinitive}</span>
+                    <div key={item.infinitive} className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex flex-col items-center text-center">
+                        <span className="text-xs text-slate-400 font-medium italic mb-1">{item.infinitive} ({item.meaning})</span>
                         <span className="text-lg font-bold text-indigo-600">{item.pp}</span>
                     </div>
                 ))}
