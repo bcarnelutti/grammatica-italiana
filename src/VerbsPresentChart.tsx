@@ -31,6 +31,15 @@ const irregularVerbs: IrregularVerb[] = [
   { infinitive: 'Dovere', meaning: 'to must/have to', conjugation: ['devo', 'devi', 'deve', 'dobbiamo', 'dovete', 'devono'] },
 ];
 
+const iscVerbs: IrregularVerb[] = [
+  { infinitive: 'Capire', meaning: 'to understand', conjugation: ['capisco', 'capisci', 'capisce', 'capiamo', 'capite', 'capiscono'] },
+  { infinitive: 'Finire', meaning: 'to finish', conjugation: ['finisco', 'finisci', 'finisce', 'finiamo', 'finite', 'finiscono'] },
+  { infinitive: 'Preferire', meaning: 'to prefer', conjugation: ['preferisco', 'preferisci', 'preferisce', 'preferiamo', 'preferite', 'preferiscono'] },
+  { infinitive: 'Pulire', meaning: 'to clean', conjugation: ['pulisco', 'pulisci', 'pulisce', 'puliamo', 'pulite', 'puliscono'] },
+  { infinitive: 'Spedire', meaning: 'to send', conjugation: ['spedisco', 'spedisci', 'spedisce', 'spediamo', 'spedite', 'spediscono'] },
+  { infinitive: 'Costruire', meaning: 'to build', conjugation: ['costruisco', 'costruisci', 'costruisce', 'costruiamo', 'costruite', 'costruiscono'] },
+];
+
 const VerbsPresentChart = () => {
   const { t } = useLanguage();
   const [selectedVerb, setSelectedVerb] = useState<IrregularVerb | null>(null);
@@ -95,14 +104,6 @@ const VerbsPresentChart = () => {
             </tbody>
           </table>
         </div>
-        
-        <div className="mt-8 bg-green-50 p-6 rounded-xl border border-green-100 text-sm text-green-800">
-            <h4 className="font-bold mb-2">{t('verbs.noteTitle')}</h4>
-            <p>{t('verbs.noteText')}</p>
-            <div className="mt-2 font-mono italic">
-                io cap<strong>isc</strong>o, tu cap<strong>isc</strong>i, lui cap<strong>isc</strong>e, noi capiamo, voi capite, loro cap<strong>isc</strong>ono.
-            </div>
-        </div>
       </section>
 
       {/* Irregular Verbs Section */}
@@ -112,7 +113,7 @@ const VerbsPresentChart = () => {
             <MousePointerClick className="text-slate-400" size={28}/>
         </h3>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-12">
             {irregularVerbs.map((verb) => (
                 <motion.button
                     key={verb.infinitive}
@@ -125,6 +126,27 @@ const VerbsPresentChart = () => {
                     <span className="text-xs text-slate-500 italic">{verb.meaning}</span>
                 </motion.button>
             ))}
+        </div>
+
+        {/* ISC Verbs Section */}
+        <div className="bg-teal-50 p-8 rounded-2xl border border-teal-100">
+            <h4 className="text-2xl font-bold text-teal-800 text-center mb-2">{t('verbs.noteTitle')}</h4>
+            <p className="text-center text-teal-700 mb-8 max-w-2xl mx-auto">{t('verbs.noteText')}</p>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {iscVerbs.map((verb) => (
+                    <motion.button
+                        key={verb.infinitive}
+                        onClick={() => setSelectedVerb(verb)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="p-4 bg-white rounded-xl shadow-sm border border-teal-200 hover:border-teal-400 hover:shadow-md transition-all flex flex-col items-center"
+                    >
+                        <span className="font-bold text-lg text-teal-900">{verb.infinitive}</span>
+                        <span className="text-xs text-teal-600 italic">{verb.meaning}</span>
+                    </motion.button>
+                ))}
+            </div>
         </div>
       </section>
 
