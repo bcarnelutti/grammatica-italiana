@@ -117,6 +117,9 @@ const Lesson1Exercises = () => {
         <ExerciseItem part={{ type: 'fill', question: '(A me) __________ il Festival di Sanremo.', answer: 'mi interessa/non mi interessa' }} index={6} />
         
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
+        <p className="text-sm text-slate-600 mb-2 italic">
+            Scrivi le tue risposte qui sotto e poi caricale sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
+        </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi 3 frasi su di te: 2 cose che ti interessano, 1 cosa che non ti interessa.</p>
         <ExerciseItem part={{ type: 'write', question: '' }} index={5} />
       </div>
@@ -233,6 +236,9 @@ const Lesson1Exercises = () => {
         </div>
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
+        <p className="text-sm text-slate-600 mb-2 italic">
+            Scrivi il tuo paragrafo qui sotto e poi caricalo sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
+        </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
         <ExerciseItem part={{ type: 'write', question: '' }} index={27} />
       </div>
