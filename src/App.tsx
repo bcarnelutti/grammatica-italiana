@@ -3,16 +3,26 @@ import { motion } from 'framer-motion';
 import { Globe, Shirt, Stethoscope, Plane, GraduationCap, User, Trees, Gift, Dumbbell } from 'lucide-react';
 
 import ArticlesChart from './ArticlesChart';
+import VerbsMenu from './VerbsMenu';
 import VerbsPresentChart from './VerbsPresentChart';
+import VerbsPassatoProssimoChart from './VerbsPassatoProssimoChart';
+import VerbsImperfettoChart from './VerbsImperfettoChart';
+import VerbsFuturoChart from './VerbsFuturoChart';
+import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 // --- Context Definition ---
-type ViewState = 
+export type ViewState = 
   | 'articles'
+  | 'verbs_menu'
   | 'verbs_present'
+  | 'verbs_passato_prossimo'
+  | 'verbs_imperfetto'
+  | 'verbs_futuro'
+  | 'verbs_reflexive'
   | 'prepositions'
   | 'vocabulary_menu' 
   | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports';
@@ -35,7 +45,7 @@ const ChartProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const useChartContext = () => {
+export const useChartContext = () => {
   const context = useContext(ChartContext);
   if (!context) throw new Error("useChartContext must be used within a ChartProvider");
   return context;
@@ -60,7 +70,8 @@ const LanguageSwitcher = () => {
 const Navigation = () => {
   const { view, setView } = useChartContext();
   const { t } = useLanguage();
-  const isVocabActive = ['vocabulary_menu', 'vocab_clothing', 'vocab_health', 'vocab_travel', 'vocab_education', 'vocab_body', 'vocab_nature', 'vocab_celebrations', 'vocab_sports'].includes(view);
+  const isVerbsActive = view.startsWith('verbs_');
+  const isVocabActive = view.startsWith('vocab_') || view === 'vocabulary_menu';
 
   return (
     <div className="flex justify-center mb-12 space-x-6 flex-wrap gap-y-4">
@@ -75,9 +86,9 @@ const Navigation = () => {
         {t('nav.articles')}
       </button>
       <button
-        onClick={() => setView('verbs_present')}
+        onClick={() => setView('verbs_menu')}
         className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
-          view === 'verbs_present'
+          isVerbsActive
             ? 'bg-indigo-600 text-white shadow-lg scale-105'
             : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
         }`}
@@ -202,8 +213,28 @@ const MainContent = () => {
     return <ArticlesChart />;
   }
 
+  if (view === 'verbs_menu') {
+    return <VerbsMenu />;
+  }
+
   if (view === 'verbs_present') {
     return <VerbsPresentChart />;
+  }
+
+  if (view === 'verbs_passato_prossimo') {
+    return <VerbsPassatoProssimoChart />;
+  }
+
+  if (view === 'verbs_imperfetto') {
+    return <VerbsImperfettoChart />;
+  }
+
+  if (view === 'verbs_futuro') {
+    return <VerbsFuturoChart />;
+  }
+
+  if (view === 'verbs_reflexive') {
+    return <VerbsReflexiveChart />;
   }
 
   if (view === 'prepositions') {
