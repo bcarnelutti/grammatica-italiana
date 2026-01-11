@@ -182,8 +182,13 @@ const AppContent = () => {
 
         <MainContent />
         
-        <footer className="mt-24 text-center text-slate-400 text-sm">
-          {t('footer')} — <a href="https://github.com/bcarnelutti/grammatica-italiana" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline transition-colors">Creato da Beatrice Carnelutti</a>
+        <footer className="mt-24 text-center text-slate-400 text-sm space-y-2">
+          <p>
+            {t('footer')} — <a href="https://github.com/bcarnelutti/grammatica-italiana" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline transition-colors">Creato da Beatrice Carnelutti</a>
+          </p>
+          <p className="text-xs opacity-70">
+            App: MIT License | Content: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline">CC BY-NC-SA 4.0</a>
+          </p>
         </footer>
       </div>
     </div>

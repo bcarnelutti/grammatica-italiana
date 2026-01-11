@@ -19,7 +19,19 @@ Interactive charts for understanding:
 *   Lucide React
 
 ## Development
+
 ```bash
+
 npm install
+
 npm run dev
+
 ```
+
+
+
+## License
+
+*   **Web App:** [MIT License](LICENSE) (Requires attribution).
+
+*   **Content:** [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
