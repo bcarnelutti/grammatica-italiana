@@ -5,14 +5,14 @@ const PrepositionsChart = () => {
   const { t } = useLanguage();
 
   const simplePrepositions = [
-    { prep: 'di', meaning: 'di (possession, origin)', example: 'Il libro di Marco' },
-    { prep: 'a', meaning: 'a (to, at)', example: 'Vado a casa' },
-    { prep: 'da', meaning: 'da (from, by)', example: 'Vengo da Roma' },
-    { prep: 'in', meaning: 'in (in, into)', example: 'Vivo in Italia' },
-    { prep: 'con', meaning: 'con (with)', example: 'Esco con Maria' },
-    { prep: 'su', meaning: 'su (on, about)', example: 'Il gatto è sul tavolo' },
-    { prep: 'per', meaning: 'per (for, through)', example: 'Questo è per te' },
-    { prep: 'tra / fra', meaning: 'tra / fra (between, among)', example: 'Tra due giorni' },
+    { prep: 'di', label: 'di' },
+    { prep: 'a', label: 'a' },
+    { prep: 'da', label: 'da' },
+    { prep: 'in', label: 'in' },
+    { prep: 'con', label: 'con' },
+    { prep: 'su', label: 'su' },
+    { prep: 'per', label: 'per' },
+    { prep: 'tra / fra', label: 'tra' },
   ];
 
   return (
@@ -26,8 +26,7 @@ const PrepositionsChart = () => {
             {simplePrepositions.map((item, idx) => (
                 <div key={idx} className="p-4 bg-orange-50 rounded-lg border border-orange-100">
                     <div className="text-2xl font-bold text-orange-900 mb-1">{item.prep}</div>
-                    <div className="text-sm text-orange-800 mb-2">{item.meaning}</div>
-                    <div className="text-xs text-slate-500 italic">{item.example}</div>
+                    <div className="text-sm text-orange-800 mb-2">{t(`prepositions.labels.${item.label}`)}</div>
                 </div>
             ))}
         </div>

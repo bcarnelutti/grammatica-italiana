@@ -31,13 +31,21 @@ const colors: Record<string, string> = {
 };
 
 const VocabularyChart = ({ topic }: VocabularyChartProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedWord, setSelectedWord] = useState<VocabItem | null>(null);
   
   const items = [...vocabularyData[topic]].sort((a, b) => a.it.localeCompare(b.it));
   
   const Icon = icons[topic] || User;
   const colorClass = colors[topic] || 'text-slate-600 bg-slate-50 border-slate-100';
+
+  const getGenderLabel = (gender?: string) => {
+      if (!gender) return '';
+      if (gender === 'm') return t('common.masculine');
+      if (gender === 'f') return t('common.feminine');
+      if (gender === 'pl') return t('common.plural');
+      return gender;
+  }
 
   return (
     <section className="my-8 max-w-6xl mx-auto relative">
@@ -110,9 +118,8 @@ const VocabularyChart = ({ topic }: VocabularyChartProps) => {
               <div className="p-8 flex justify-center">
                  <div className="text-center">
                     <p className="text-lg text-slate-600">
-                        Genere: <span className="font-bold">
-                            {selectedWord.gender === 'm' ? 'Maschile' : 
-                             selectedWord.gender === 'f' ? 'Femminile' : 'Plurale'}
+                        {t('common.gender')}: <span className="font-bold">
+                            {getGenderLabel(selectedWord.gender)}
                         </span>
                     </p>
                  </div>

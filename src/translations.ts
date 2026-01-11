@@ -10,16 +10,49 @@ export const translations = {
       vocabulary: "Vocabolario",
       back: "Indietro"
     },
+    common: {
+      masculine: "Maschile",
+      feminine: "Femminile",
+      singular: "Singolare",
+      plural: "Plurale",
+      usage: "Quando si usa",
+      example: "Esempio",
+      gender: "Genere",
+      pronoun: "Pronome"
+    },
     articles: {
       definiteTitle: "Articoli Determinativi",
-      indefiniteTitle: "Articoli Indeterminativi"
+      indefiniteTitle: "Articoli Indeterminativi",
+      rules: {
+        m_cons: "Davanti a consonante (il libro, i libri)",
+        m_special: "Davanti a s+cons., z, gn, ps, pn, y (lo studente, gli studenti)",
+        m_vowel: "Davanti a vocale (l'amico, gli amici)",
+        f_cons: "Davanti a consonante (la casa, le case)",
+        f_vowel: "Davanti a vocale (l'amica, le amiche)",
+        un_m: "Davanti a vocale o consonante (un libro, un amico)",
+        uno_m: "Davanti a s+cons., z, gn, ps, pn, y (uno zaino, uno studente)",
+        una_f: "Davanti a consonante (una mela)",
+        un_f: "Davanti a vocale (un'amica)"
+      }
     },
     verbs: {
-      presentTitle: "Presente Indicativo"
+      presentTitle: "Presente Indicativo",
+      noteTitle: "Nota: Verbi in -IRE con -ISC-",
+      noteText: "Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono -isc- tra la radice e la desinenza nelle persone singolari e nella 3^ plurale."
     },
     prepositions: {
       simpleTitle: "Preposizioni Semplici",
-      articulatedTitle: "Preposizioni Articolate"
+      articulatedTitle: "Preposizioni Articolate",
+      labels: {
+        di: "di (possesso, origine)",
+        a: "a (moto/stato in luogo)",
+        da: "da (provenienza)",
+        in: "in (stato/moto in luogo)",
+        con: "con (compagnia/mezzo)",
+        su: "su (posizione/argomento)",
+        per: "per (scopo/destinazione)",
+        tra: "tra / fra (posizione/tempo)"
+      }
     },
     vocabularyMenu: {
       clothing: "Abbigliamento",
@@ -47,16 +80,49 @@ export const translations = {
       vocabulary: "Vocabulary",
       back: "Back"
     },
+    common: {
+      masculine: "Masculine",
+      feminine: "Feminine",
+      singular: "Singular",
+      plural: "Plural",
+      usage: "Usage",
+      example: "Example",
+      gender: "Gender",
+      pronoun: "Pronoun"
+    },
     articles: {
       definiteTitle: "Definite Articles",
-      indefiniteTitle: "Indefinite Articles"
+      indefiniteTitle: "Indefinite Articles",
+      rules: {
+        m_cons: "Before a consonant (il libro, i libri)",
+        m_special: "Before s+cons., z, gn, ps, pn, y (lo studente, gli studenti)",
+        m_vowel: "Before a vowel (l'amico, gli amici)",
+        f_cons: "Before a consonant (la casa, le case)",
+        f_vowel: "Before a vowel (l'amica, le amiche)",
+        un_m: "Before a vowel or consonant (un libro, un amico)",
+        uno_m: "Before s+cons., z, gn, ps, pn, y (uno zaino, uno studente)",
+        una_f: "Before a consonant (una mela)",
+        un_f: "Before a vowel (un'amica)"
+      }
     },
     verbs: {
-      presentTitle: "Present Indicative"
+      presentTitle: "Present Indicative",
+      noteTitle: "Note: Verbs in -IRE with -ISC-",
+      noteText: "Some verbs of the 3rd conjugation (capire, finire, preferire, pulire) add -isc- between the stem and the ending in the singular persons and the 3rd plural."
     },
     prepositions: {
       simpleTitle: "Simple Prepositions",
-      articulatedTitle: "Articulated Prepositions"
+      articulatedTitle: "Articulated Prepositions",
+      labels: {
+        di: "of (possession, origin)",
+        a: "to / at (motion/state)",
+        da: "from (provenance)",
+        in: "in / into (state/motion)",
+        con: "with (company/means)",
+        su: "on / about (position/topic)",
+        per: "for / through (purpose/dest.)",
+        tra: "between / among (pos./time)"
+      }
     },
     vocabularyMenu: {
       clothing: "Clothing",

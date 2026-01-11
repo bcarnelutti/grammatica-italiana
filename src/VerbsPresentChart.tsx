@@ -15,7 +15,7 @@ const VerbsPresentChart = () => {
           <table className="w-full min-w-[600px] border-collapse text-left">
             <thead>
               <tr className="border-b-2 border-gray-200">
-                <th className="p-4 text-gray-500 font-medium w-1/4">Pronome</th>
+                <th className="p-4 text-gray-500 font-medium w-1/4">{t('common.pronoun')}</th>
                 <th className="p-4 text-green-600 font-bold w-1/4">-ARE (parl-are)</th>
                 <th className="p-4 text-green-600 font-bold w-1/4">-ERE (scriv-ere)</th>
                 <th className="p-4 text-green-600 font-bold w-1/4">-IRE (dorm-ire)</th>
@@ -63,9 +63,9 @@ const VerbsPresentChart = () => {
         </div>
         
         <div className="mt-8 bg-green-50 p-6 rounded-xl border border-green-100 text-sm text-green-800">
-            <h4 className="font-bold mb-2">Nota: Verbi in -IRE con -ISC-</h4>
-            <p>Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono <strong>-isc-</strong> tra la radice e la desinenza nelle persone singolari e nella 3^ plurale.</p>
-            <div className="mt-2 font-mono">
+            <h4 className="font-bold mb-2">{t('verbs.noteTitle')}</h4>
+            <p>{t('verbs.noteText')}</p>
+            <div className="mt-2 font-mono italic">
                 io cap<strong>isc</strong>o, tu cap<strong>isc</strong>i, lui cap<strong>isc</strong>e, noi capiamo, voi capite, loro cap<strong>isc</strong>ono.
             </div>
         </div>
