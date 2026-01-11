@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useChartContext, ViewState } from './App';
+import { useChartContext, ViewState } from './ChartContext';
 import { useLanguage } from './LanguageContext';
 import { BookOpen, Clock, Activity, ArrowRight, RotateCw } from 'lucide-react';
 

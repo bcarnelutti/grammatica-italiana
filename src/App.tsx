@@ -13,43 +13,7 @@ import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 
 import { LanguageProvider, useLanguage } from './LanguageContext';
-
-// --- Context Definition ---
-export type ViewState = 
-  | 'articles'
-  | 'verbs_menu'
-  | 'verbs_present'
-  | 'verbs_passato_prossimo'
-  | 'verbs_imperfetto'
-  | 'verbs_futuro'
-  | 'verbs_reflexive'
-  | 'prepositions'
-  | 'vocabulary_menu' 
-  | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports';
-
-interface ChartContextType {
-  // Navigation State
-  view: ViewState;
-  setView: React.Dispatch<React.SetStateAction<ViewState>>;
-}
-
-const ChartContext = createContext<ChartContextType | null>(null);
-
-const ChartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [view, setView] = useState<ViewState>('articles');
-
-  return (
-    <ChartContext.Provider value={{ view, setView }}>
-      {children}
-    </ChartContext.Provider>
-  );
-};
-
-export const useChartContext = () => {
-  const context = useContext(ChartContext);
-  if (!context) throw new Error("useChartContext must be used within a ChartProvider");
-  return context;
-};
+import { ChartProvider, useChartContext, ViewState } from './ChartContext';
 
 // --- Components ---
 
@@ -115,43 +79,6 @@ const Navigation = () => {
       >
         {t('nav.vocabulary')}
       </button>
-    </div>
-  );
-};
-
-const VocabularyMenu = () => {
-  const { setView } = useChartContext();
-  const { t } = useLanguage();
-
-  const menuItems = [
-    { id: 'vocab_clothing', label: t('vocabularyMenu.clothing'), icon: Shirt, color: 'text-pink-600' },
-    { id: 'vocab_health', label: t('vocabularyMenu.health'), icon: Stethoscope, color: 'text-red-600' },
-    { id: 'vocab_travel', label: t('vocabularyMenu.travel'), icon: Plane, color: 'text-sky-600' },
-    { id: 'vocab_education', label: t('vocabularyMenu.education'), icon: GraduationCap, color: 'text-indigo-600' },
-    { id: 'vocab_body', label: t('vocabularyMenu.body'), icon: User, color: 'text-orange-600' },
-    { id: 'vocab_nature', label: t('vocabularyMenu.nature'), icon: Trees, color: 'text-emerald-600' },
-    { id: 'vocab_celebrations', label: t('vocabularyMenu.celebrations'), icon: Gift, color: 'text-purple-600' },
-    { id: 'vocab_sports', label: t('vocabularyMenu.sports'), icon: Dumbbell, color: 'text-blue-600' },
-  ] as const;
-
-  return (
-    <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-      {menuItems.map((item) => (
-        <motion.button
-          key={item.id}
-          onClick={() => setView(item.id as ViewState)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center gap-4 group"
-        >
-          <div className={`p-4 rounded-full bg-slate-50 group-hover:bg-slate-100 transition-colors ${item.color}`}>
-             <item.icon size={32} />
-          </div>
-          <h3 className="text-xl font-bold text-slate-800">
-            {item.label}
-          </h3>
-        </motion.button>
-      ))}
     </div>
   );
 };
@@ -251,6 +178,43 @@ const MainContent = () => {
   }
 
   return null;
+};
+
+const VocabularyMenu = () => {
+  const { setView } = useChartContext();
+  const { t } = useLanguage();
+
+  const menuItems = [
+    { id: 'vocab_clothing', label: t('vocabularyMenu.clothing'), icon: Shirt, color: 'text-pink-600' },
+    { id: 'vocab_health', label: t('vocabularyMenu.health'), icon: Stethoscope, color: 'text-red-600' },
+    { id: 'vocab_travel', label: t('vocabularyMenu.travel'), icon: Plane, color: 'text-sky-600' },
+    { id: 'vocab_education', label: t('vocabularyMenu.education'), icon: GraduationCap, color: 'text-indigo-600' },
+    { id: 'vocab_body', label: t('vocabularyMenu.body'), icon: User, color: 'text-orange-600' },
+    { id: 'vocab_nature', label: t('vocabularyMenu.nature'), icon: Trees, color: 'text-emerald-600' },
+    { id: 'vocab_celebrations', label: t('vocabularyMenu.celebrations'), icon: Gift, color: 'text-purple-600' },
+    { id: 'vocab_sports', label: t('vocabularyMenu.sports'), icon: Dumbbell, color: 'text-blue-600' },
+  ] as const;
+
+  return (
+    <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      {menuItems.map((item) => (
+        <motion.button
+          key={item.id}
+          onClick={() => setView(item.id as ViewState)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center gap-4 group"
+        >
+          <div className={`p-4 rounded-full bg-slate-50 group-hover:bg-slate-100 transition-colors ${item.color}`}>
+             <item.icon size={32} />
+          </div>
+          <h3 className="text-xl font-bold text-slate-800">
+            {item.label}
+          </h3>
+        </motion.button>
+      ))}
+    </div>
+  );
 };
 
 export default App;
