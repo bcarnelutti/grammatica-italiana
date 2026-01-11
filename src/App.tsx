@@ -14,6 +14,7 @@ import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
+import Exercises from './Exercises';
 
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import { ChartProvider, useChartContext, type ViewState } from './ChartContext';
@@ -81,6 +82,16 @@ const Navigation = () => {
         }`}
       >
         {t('nav.vocabulary')}
+      </button>
+      <button
+        onClick={() => setView('exercises')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          view === 'exercises'
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.exercises')}
       </button>
     </div>
   );
@@ -185,6 +196,10 @@ const MainContent = () => {
 
   if (view === 'vocabulary_menu') {
     return <VocabularyMenu />;
+  }
+
+  if (view === 'exercises') {
+    return <Exercises />;
   }
 
   if (view.startsWith('vocab_')) {

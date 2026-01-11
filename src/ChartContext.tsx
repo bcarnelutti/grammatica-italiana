@@ -13,7 +13,8 @@ export type ViewState =
   | 'verbs_reflexive'
   | 'prepositions'
   | 'vocabulary_menu' 
-  | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports';
+  | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports'
+  | 'exercises';
 
 interface ChartContextType {
   view: ViewState;

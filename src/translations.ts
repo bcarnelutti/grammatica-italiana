@@ -8,7 +8,10 @@ export const translations = {
       verbs: "Verbi",
       prepositions: "Preposizioni",
       vocabulary: "Vocabolario",
-      back: "Indietro"
+      exercises: "Esercizi",
+    exercises: {
+      title: "Esercizi",
+      comingSoon: "Presto disponibili!"
     },
     common: {
       masculine: "Maschile",
@@ -108,6 +111,7 @@ export const translations = {
       verbs: "Verbs",
       prepositions: "Prepositions",
       vocabulary: "Vocabulary",
+      exercises: "Exercises",
       back: "Back"
     },
     common: {
