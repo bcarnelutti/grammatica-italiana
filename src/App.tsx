@@ -183,7 +183,7 @@ const AppContent = () => {
         <MainContent />
         
         <footer className="mt-24 text-center text-slate-400 text-sm">
-          {t('footer')}
+          {t('footer')} — <a href="https://github.com/bcarnelutti/grammatica-italiana" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 underline transition-colors">Creato da Beatrice Carnelutti</a>
         </footer>
       </div>
     </div>
