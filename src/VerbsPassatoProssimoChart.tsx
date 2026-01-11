@@ -1,7 +1,10 @@
 import { useLanguage } from './LanguageContext';
+import { useChartContext, type ViewState } from './ChartContext';
+import { Home } from 'lucide-react';
 
 const VerbsPassatoProssimoChart = () => {
   const { t } = useLanguage();
+  const { setView } = useChartContext();
 
   return (
     <div className="space-y-12">
@@ -35,7 +38,7 @@ const VerbsPassatoProssimoChart = () => {
             </div>
 
             {/* ESSERE */}
-            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 flex flex-col">
                 <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center">Ausiliare ESSERE</h3>
                 <p className="text-center text-blue-900 mb-4 font-medium italic">Verbi di moto, stato, cambiamento, riflessivi (andare, stare, nascere)</p>
                  <table className="w-full text-left">
@@ -55,7 +58,15 @@ const VerbsPassatoProssimoChart = () => {
                         <tr><td className="py-2 font-bold text-blue-900">loro</td><td>sono</td><td className="italic">andati/e</td></tr>
                     </tbody>
                 </table>
-                <p className="mt-4 text-xs text-blue-800 font-bold text-center">{t('verbs.ppAgreement')}</p>
+                <p className="mt-4 text-xs text-blue-800 font-bold text-center mb-6">{t('verbs.ppAgreement')}</p>
+                
+                <button 
+                    onClick={() => setView('verbs_casa_di_essere')}
+                    className="mt-auto mx-auto flex items-center gap-2 px-6 py-3 bg-white border-2 border-indigo-100 text-indigo-700 rounded-full font-bold shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
+                >
+                    <Home size={20} />
+                    {t('verbs.goToCasaDiEssere')}
+                </button>
             </div>
         </div>
         

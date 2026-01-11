@@ -1,7 +1,10 @@
 import { useLanguage } from './LanguageContext';
+import { useChartContext, type ViewState } from './ChartContext';
+import { Home } from 'lucide-react';
 
 const VerbsCongiuntivoPassatoChart = () => {
   const { t } = useLanguage();
+  const { setView } = useChartContext();
 
   return (
     <div className="space-y-12">
@@ -33,7 +36,7 @@ const VerbsCongiuntivoPassatoChart = () => {
                 </table>
             </div>
 
-             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 flex flex-col">
                 <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">Ausiliare ESSERE</h3>
                 <p className="text-center text-slate-700 mb-4 font-medium italic">che io sia andato/a</p>
                  <table className="w-full text-left">
@@ -53,6 +56,14 @@ const VerbsCongiuntivoPassatoChart = () => {
                         <tr><td className="py-2 font-bold text-slate-800">che loro</td><td>siano</td><td className="italic">andati/e</td></tr>
                     </tbody>
                 </table>
+                
+                <button 
+                    onClick={() => setView('verbs_casa_di_essere')}
+                    className="mt-6 mx-auto flex items-center gap-2 px-6 py-3 bg-white border-2 border-indigo-100 text-indigo-700 rounded-full font-bold shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
+                >
+                    <Home size={20} />
+                    {t('verbs.goToCasaDiEssere')}
+                </button>
             </div>
         </div>
       </section>

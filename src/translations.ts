@@ -28,7 +28,8 @@ export const translations = {
       condizionale_presente: "Condizionale Presente",
       congiuntivo_presente: "Congiuntivo Presente",
       congiuntivo_passato: "Congiuntivo Passato",
-      reflexive: "Verbi Riflessivi"
+      reflexive: "Verbi Riflessivi",
+      casa_di_essere: "La Casa di Essere"
     },
     articles: {
       definiteTitle: "Articoli Determinativi",
@@ -54,6 +55,9 @@ export const translations = {
       congiuntivoPresenteTitle: "Congiuntivo Presente",
       congiuntivoPassatoTitle: "Congiuntivo Passato",
       reflexiveTitle: "Verbi Riflessivi",
+      casaDiEssereTitle: "La Casa di Essere",
+      casaDiEssereDesc: "I verbi che abitano nella 'Casa di Essere' usano sempre l'ausiliare 'essere' nei tempi composti (Passato Prossimo, ecc.). Sono generalmente verbi di movimento, stato, cambiamento di stato, o verbi intransitivi.",
+      goToCasaDiEssere: "Vai alla Casa di Essere",
       noteTitle: "Nota: Verbi in -IRE con -ISC-",
       noteText: "Alcuni verbi della 3^ coniugazione (capire, finire, preferire, pulire) aggiungono -isc- tra la radice e la desinenza nelle persone singolari e nella 3^ plurale.",
       auxiliary: "Ausiliare",
@@ -119,7 +123,8 @@ export const translations = {
       condizionale_presente: "Present Conditional",
       congiuntivo_presente: "Present Subjunctive",
       congiuntivo_passato: "Past Subjunctive",
-      reflexive: "Reflexive Verbs"
+      reflexive: "Reflexive Verbs",
+      casa_di_essere: "The House of Being"
     },
     articles: {
       definiteTitle: "Definite Articles",
@@ -145,6 +150,9 @@ export const translations = {
       congiuntivoPresenteTitle: "Present Subjunctive",
       congiuntivoPassatoTitle: "Past Subjunctive",
       reflexiveTitle: "Reflexive Verbs",
+      casaDiEssereTitle: "The House of Being",
+      casaDiEssereDesc: "Verbs living in the 'House of Being' always use the auxiliary 'essere' (to be) in compound tenses (Passato Prossimo, etc.). They are generally verbs of motion, state, change of state, or intransitive verbs.",
+      goToCasaDiEssere: "Go to the House of Being",
       noteTitle: "Note: Verbs in -IRE with -ISC-",
       noteText: "Some verbs of the 3rd conjugation (capire, finire, preferire, pulire) add -isc- between the stem and the ending in the singular persons and the 3rd plural.",
       auxiliary: "Auxiliary",

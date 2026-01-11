@@ -12,6 +12,7 @@ import VerbsCondizionalePresenteChart from './VerbsCondizionalePresenteChart';
 import VerbsCongiuntivoPresenteChart from './VerbsCongiuntivoPresenteChart';
 import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
+import CasaDiEssereChart from './CasaDiEssereChart';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 
@@ -177,6 +178,10 @@ const MainContent = () => {
 
   if (view === 'verbs_reflexive') {
     return <VerbsReflexiveChart />;
+  }
+
+  if (view === 'verbs_casa_di_essere') {
+    return <CasaDiEssereChart />;
   }
 
   if (view === 'prepositions') {
