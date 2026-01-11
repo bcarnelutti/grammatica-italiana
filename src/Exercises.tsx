@@ -12,12 +12,9 @@ const Exercises = () => {
   return (
     <div className="space-y-8 my-12 max-w-4xl mx-auto">
       <section className="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center min-h-[300px]">
-        <div className="bg-yellow-50 p-6 rounded-full mb-6">
+        <div className="bg-yellow-50 p-6 rounded-full mb-12">
             <Pencil size={64} className="text-yellow-500" />
         </div>
-        <h2 className="text-4xl font-serif text-center mb-12 text-gray-800">
-          {t('exercises.title')}
-        </h2>
 
         {/* Collapsible Section ITALIAN 202 */}
         <div className="w-full max-w-3xl">
