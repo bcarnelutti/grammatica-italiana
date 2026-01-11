@@ -15,12 +15,9 @@ const Exercises = () => {
         <div className="bg-yellow-50 p-6 rounded-full mb-6">
             <Pencil size={64} className="text-yellow-500" />
         </div>
-        <h2 className="text-4xl font-serif text-center mb-4 text-gray-800">
+        <h2 className="text-4xl font-serif text-center mb-12 text-gray-800">
           {t('exercises.title')}
         </h2>
-        <p className="text-xl text-slate-500 italic mb-8">
-            {activeLesson ? t('exercises.lesson1') : t('exercises.comingSoon')}
-        </p>
 
         {/* Collapsible Section ITALIAN 202 */}
         <div className="w-full max-w-3xl">
