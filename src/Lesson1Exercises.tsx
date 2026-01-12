@@ -164,7 +164,7 @@ const Lesson1Exercises = () => {
       {/* Exercise 5 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 5: Informazioni sull’evento</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa la scheda (usa le parole nel box: sabato / in centro / gratis / degustazioni / 10€ / alle 18:00)</h4>
+        <h4 className="font-bold text-slate-700 mb-2">A. Completa la scheda (usa le parole nel box: degustazioni / sabato / gratis / alle 18:00 / in centro / 10€)</h4>
         <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
             <div className="font-bold text-center border-b pb-2 mb-2">Evento: Festa dei Dolci</div>
             <div className="flex items-center gap-2">Quando: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="sabato" /></div>
@@ -194,7 +194,7 @@ const Lesson1Exercises = () => {
       {/* Exercise 7 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Punto di vista di un bambino</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (ero / era / c’erano / andavo / potevo / mi piaceva)</h4>
+        <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (andavo / ero / mi piaceva / era / potevo / c’erano)</h4>
         <div className="leading-loose">
             Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a in una città piccola. 
             La città <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (era) tranquilla e 
@@ -208,7 +208,7 @@ const Lesson1Exercises = () => {
       {/* Exercise 8 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con: da piccolo/a / secondo me / per esempio / perché</h4>
+        <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a / secondo me / per esempio</h4>
         <div className="leading-loose bg-slate-50 p-6 rounded-lg border border-slate-100">
             Il posto dove sono cresciuto/a <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era molto interessante 
             <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era pieno di cose da fare e di posti da scoprire con gli amici. 
