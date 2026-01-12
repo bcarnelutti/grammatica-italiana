@@ -132,6 +132,10 @@ const Lesson1Exercises = () => {
         <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
         <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
         <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={11} />
+
+        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
+        <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
+        <ExerciseItem part={{ type: 'write', question: '' }} index={12} />
       </div>
 
       {/* Exercise 3 */}
