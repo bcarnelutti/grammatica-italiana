@@ -376,8 +376,14 @@ const Lesson1Exercises = () => {
       {/* Exercise 5 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 5: Informazioni sull’evento</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa la scheda (usa le parole nel box: degustazioni / sabato / gratis / alle 18:00 / in centro / 10€)</h4>
+        <h4 className="font-bold text-slate-700 mb-4">A. Leggi il messaggio di Luca e completa la scheda dell'evento.</h4>
         
+        <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 italic text-indigo-900">
+            "Ciao! Hai programmi per il weekend? Io vado alla <strong>Festa dei Dolci</strong>! È questo <strong>sabato</strong> <strong>in centro</strong>. 
+            Inizia <strong>alle 18:00</strong> e ci sono un sacco di <strong>degustazioni</strong> buonissime. 
+            L'ingresso costa <strong>10€</strong>, ma per i bambini è <strong>gratis</strong>."
+        </div>
+
         <CheckableEventCard />
       </div>
 
