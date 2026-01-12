@@ -196,7 +196,7 @@ const Lesson1Exercises = () => {
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Punto di vista di un bambino</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (andavo / ero / mi piaceva / era / potevo / c’erano)</h4>
         <div className="leading-loose">
-            Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a in una città piccola. 
+            Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a/* in una città piccola. 
             La città <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (era) tranquilla e 
             <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (c'erano) molti parchi. 
             In estate <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (andavo) al parco con i miei amici e 
@@ -210,7 +210,7 @@ const Lesson1Exercises = () => {
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a / secondo me / per esempio</h4>
         <div className="leading-loose bg-slate-50 p-6 rounded-lg border border-slate-100">
-            Il posto dove sono cresciuto/a <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era molto interessante 
+            Il posto dove sono cresciuto/a/* <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era molto interessante 
             <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era pieno di cose da fare e di posti da scoprire con gli amici. 
             <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , potevo andare al parco ogni pomeriggio o in biblioteca a leggere fumetti. 
             <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , quel periodo della mia vita è stato il più divertente di tutti.
@@ -220,7 +220,7 @@ const Lesson1Exercises = () => {
         <p className="text-sm text-slate-600 mb-2 italic">
             Scrivi il tuo paragrafo qui sotto e poi caricalo sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
-        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
+        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a/* dal punto di vista di un bambino”</p>
         <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
       </div>
     </div>
