@@ -96,43 +96,65 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
 // New Component for Matching Exercises (Column A -> Column B)
 const MatchingExercise = () => {
     // Correct mapping:
-    // 1. Marco (leggere) -> C (gli interessa scoprire nuovi autori)
-    // 2. Giulia (Natale) -> A (le interessa comprare addobbi)
-    // 3. Sam e Leo (cibo) -> D (gli interessano dolci)
-    // 4. Sara (storia) -> B (le interessano feste storiche)
+    // 1. Marco (leggere) -> D (gli interessa scoprire nuovi autori)
+    // 2. Sara (storia) -> A (le interessano feste storiche)
+    // 3. Giulia (Natale) -> E (le interessa comprare addobbi)
+    // 4. Noi (viaggiare) -> B (ci interessa vedere posti nuovi)
+    // 5. Sam e Leo (cibo) -> C (gli interessano dolci)
 
     const [answers, setAnswers] = useState({
         item1: '',
         item2: '',
         item3: '',
         item4: '',
-        item5: ''
+        item5: '',
+        gapA: '',
+        gapB: '',
+        gapC: '',
+        gapD: '',
+        gapE: ''
     });
     const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
 
     const correctAnswers = {
-        item1: 'D', // 1. Marco (leggere) -> D. scoprire nuovi autori
-        item2: 'A', // 2. Sara (storia) -> A. feste storiche
-        item3: 'E', // 3. Giulia (Natale) -> E. addobbi
-        item4: 'B', // 4. Noi (viaggiare) -> B. posti nuovi
-        item5: 'C'  // 5. Sam e Leo (cibo) -> C. dolci
+        item1: 'D',
+        item2: 'A',
+        item3: 'E',
+        item4: 'B',
+        item5: 'C',
+        gapA: 'le',
+        gapB: 'ci',
+        gapC: 'gli',
+        gapD: 'gli',
+        gapE: 'le'
     };
 
     const handleChange = (key: string, value: string) => {
-        setAnswers(prev => ({ ...prev, [key]: value.toUpperCase().slice(0, 1) }));
+        // For matching items (item1-5), uppercase and limit 1 char
+        // For gaps (gapA-E), lowercase
+        const isMatchingItem = key.startsWith('item');
+        const formattedValue = isMatchingItem ? value.toUpperCase().slice(0, 1) : value.toLowerCase();
+        
+        setAnswers(prev => ({ ...prev, [key]: formattedValue }));
         if (results) setResults(null);
     };
 
     const checkAll = () => {
         const newResults: { [key: string]: boolean } = {};
         (Object.keys(correctAnswers) as Array<keyof typeof correctAnswers>).forEach(key => {
-            const userVal = answers[key].trim().toUpperCase();
-            newResults[key] = userVal === correctAnswers[key];
+            const userVal = answers[key].trim();
+            // Case insensitive comparison for gaps, strict for matching letters (already uppercased)
+            newResults[key] = userVal.toLowerCase() === correctAnswers[key].toLowerCase();
         });
         setResults(newResults);
     };
 
-    const getInputClass = (key: string) => {
+    const getInputClass = (key: string, isGap = false) => {
+        if (isGap) {
+            const baseClass = "border-b-2 bg-transparent text-center w-12 focus:outline-none font-bold text-lg mx-1 ";
+            if (!results) return baseClass + "border-slate-300 focus:border-indigo-500";
+            return baseClass + (results[key] ? "border-green-500 text-green-700" : "border-red-500 text-red-700");
+        }
         const baseClass = "border-2 w-10 h-10 text-center rounded-lg focus:outline-none font-bold text-lg ";
         if (!results) return baseClass + "border-slate-300 focus:border-indigo-500";
         return baseClass + (results[key] ? "border-green-500 text-green-700 bg-green-50" : "border-red-500 text-red-700 bg-red-50");
@@ -173,37 +195,37 @@ const MatchingExercise = () => {
                     onClick={checkAll}
                     className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 transition-colors shadow-sm font-bold w-full md:w-auto"
                 >
-                    Controlla abbinamenti
+                    Controlla tutto
                 </button>
             </div>
 
-            {/* Column 2: Completions with Letters */}
+            {/* Column 2: Completions with Letters and Gaps */}
             <div className="space-y-4">
-                <h5 className="font-bold text-slate-500 uppercase text-xs tracking-wider mb-2">Interessi</h5>
+                <h5 className="font-bold text-slate-500 uppercase text-xs tracking-wider mb-2">Interessi (Inserisci il pronome)</h5>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">A</div>
-                    <span className="text-slate-700 py-1">...le interessano le feste storiche.</span>
+                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapA} onChange={(e) => handleChange('gapA', e.target.value)} className={getInputClass('gapA', true)} />interessano le feste storiche.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">B</div>
-                    <span className="text-slate-700 py-1">...ci interessa vedere posti nuovi.</span>
+                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapB} onChange={(e) => handleChange('gapB', e.target.value)} className={getInputClass('gapB', true)} />interessa vedere posti nuovi.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">C</div>
-                    <span className="text-slate-700 py-1">...gli interessano dolci diversi e spettacolari.</span>
+                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapC} onChange={(e) => handleChange('gapC', e.target.value)} className={getInputClass('gapC', true)} />interessano dolci diversi e spettacolari.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
-                    <span className="text-slate-700 py-1">...gli interessa scoprire nuovi autori.</span>
+                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapD} onChange={(e) => handleChange('gapD', e.target.value)} className={getInputClass('gapD', true)} />interessa scoprire nuovi autori.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">E</div>
-                    <span className="text-slate-700 py-1">...le interessa comprare gli addobbi per l’albero.</span>
+                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapE} onChange={(e) => handleChange('gapE', e.target.value)} className={getInputClass('gapE', true)} />interessa comprare gli addobbi per l’albero.</span>
                 </div>
             </div>
         </div>
@@ -455,7 +477,7 @@ const Lesson1Exercises = () => {
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
-        <h4 className="font-bold text-slate-700 mb-4">A. Abbina la persona all'interesse corretto (Scrivi la lettera)</h4>
+        <h4 className="font-bold text-slate-700 mb-4">A. Abbina la persona all'interesse corretto (Scrivi la lettera) e inserisci il pronome mancante.</h4>
         
         <MatchingExercise />
       </div>
