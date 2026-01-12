@@ -339,11 +339,29 @@ const Lesson1Exercises = () => {
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con: gli / le</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={11} />
+        <h4 className="font-bold text-slate-700 mb-4">A. Completa con: gli / le</h4>
+        
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <span className="font-medium text-slate-700">A Marco piace leggere</span>
+            </div>
+            <ExerciseItem part={{ type: 'fill', question: '____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
+
+            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <span className="font-medium text-slate-700">A Giulia piace il Natale</span>
+            </div>
+            <ExerciseItem part={{ type: 'fill', question: '____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
+
+            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <span className="font-medium text-slate-700">A Sam e Leo piace il cibo</span>
+            </div>
+            <ExerciseItem part={{ type: 'fill', question: '____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
+
+            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <span className="font-medium text-slate-700">A Sara piace la storia</span>
+            </div>
+            <ExerciseItem part={{ type: 'fill', question: '____ interessano le feste storiche.', answer: 'le' }} index={11} />
+        </div>
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
