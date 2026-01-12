@@ -205,27 +205,27 @@ const MatchingExercise = () => {
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">A</div>
-                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapA} onChange={(e) => handleChange('gapA', e.target.value)} className={getInputClass('gapA', true)} />interessano le feste storiche.</span>
+                    <span className="text-slate-700 py-1"><input type="text" value={answers.gapA} onChange={(e) => handleChange('gapA', e.target.value)} className={getInputClass('gapA', true)} />interessano le feste storiche.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">B</div>
-                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapB} onChange={(e) => handleChange('gapB', e.target.value)} className={getInputClass('gapB', true)} />interessa vedere posti nuovi.</span>
+                    <span className="text-slate-700 py-1"><input type="text" value={answers.gapB} onChange={(e) => handleChange('gapB', e.target.value)} className={getInputClass('gapB', true)} />interessa vedere posti nuovi.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">C</div>
-                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapC} onChange={(e) => handleChange('gapC', e.target.value)} className={getInputClass('gapC', true)} />interessano dolci diversi e spettacolari.</span>
+                    <span className="text-slate-700 py-1"><input type="text" value={answers.gapC} onChange={(e) => handleChange('gapC', e.target.value)} className={getInputClass('gapC', true)} />interessano dolci diversi e spettacolari.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
-                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapD} onChange={(e) => handleChange('gapD', e.target.value)} className={getInputClass('gapD', true)} />interessa scoprire nuovi autori.</span>
+                    <span className="text-slate-700 py-1"><input type="text" value={answers.gapD} onChange={(e) => handleChange('gapD', e.target.value)} className={getInputClass('gapD', true)} />interessa scoprire nuovi autori.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">E</div>
-                    <span className="text-slate-700 py-1">...<input type="text" value={answers.gapE} onChange={(e) => handleChange('gapE', e.target.value)} className={getInputClass('gapE', true)} />interessa comprare gli addobbi per l’albero.</span>
+                    <span className="text-slate-700 py-1"><input type="text" value={answers.gapE} onChange={(e) => handleChange('gapE', e.target.value)} className={getInputClass('gapE', true)} />interessa comprare gli addobbi per l’albero.</span>
                 </div>
             </div>
         </div>
