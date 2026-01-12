@@ -11,10 +11,6 @@ interface ExercisePart {
 }
 
 const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) => {
-  // Logic allows for multiple gaps if answer is split by '|'
-  // But current implementation binds all inputs to one state. 
-  // For this specific file, existing exercises seem to use single words or simple phrases.
-  // We will keep this as is for compatibility with existing simple items.
   const [userAnswer, setUserAnswer] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -108,7 +104,7 @@ const CheckableParagraph = () => {
     const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
 
     const correctAnswers = {
-        gap1: ['da piccolo', 'da piccola', 'da piccolo/a'],
+        gap1: ['da piccolo', 'da piccola', 'da piccolo/a', 'da piccolo/a/*'],
         gap2: ['perché', 'perche'],
         gap3: ['per esempio'],
         gap4: ['secondo me']
@@ -116,20 +112,15 @@ const CheckableParagraph = () => {
 
     const handleChange = (key: string, value: string) => {
         setAnswers(prev => ({ ...prev, [key]: value }));
-        if (results) setResults(null); // Reset results on change
+        if (results) setResults(null);
     };
 
     const checkAll = () => {
         const newResults: { [key: string]: boolean } = {};
-        let allCorrect = true;
-
         (Object.keys(correctAnswers) as Array<keyof typeof correctAnswers>).forEach(key => {
             const userVal = answers[key].toLowerCase().trim();
-            const isCorrect = correctAnswers[key].includes(userVal);
-            newResults[key] = isCorrect;
-            if (!isCorrect) allCorrect = false;
+            newResults[key] = correctAnswers[key].includes(userVal);
         });
-
         setResults(newResults);
     };
 
@@ -234,48 +225,44 @@ const Lesson1Exercises = () => {
             Scrivi le tue risposte qui sotto e poi caricale sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi 3 frasi su di te: 2 cose che ti interessano, 1 cosa che non ti interessa.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={5} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={7} />
       </div>
 
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: gli / le</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={6} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={7} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={8} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={9} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={11} />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={10} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={12} />
       </div>
 
       {/* Exercise 3 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 3: “Quale evento ti interessa di più?”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: mi / ti / gli / le / ci / vi / gli</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={11} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={12} />
-        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={13} />
-        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={14} />
-        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={15} />
-        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={16} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={17} />
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Rispondi in 3–4 righe: Quale evento della lista ti interessa di più? Perché?</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={18} />
+        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={13} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={14} />
+        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={15} />
+        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={16} />
+        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={17} />
+        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={18} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={19} />
       </div>
 
       {/* Exercise 4 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 4: Domande “smartphone activity”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa le domande (inserisci la parola mancante)</h4>
-        <ExerciseItem part={{ type: 'fill', question: '__________ è? (Quando è?)', answer: 'quando' }} index={19} />
-        <ExerciseItem part={{ type: 'fill', question: 'Cosa __________ __________?', answer: 'si fa' }} index={20} />
-        <ExerciseItem part={{ type: 'fill', question: 'Quanto __________?', answer: 'costa' }} index={21} />
-        <ExerciseItem part={{ type: 'fill', question: 'Bisogna pagare l’__________ o è __________?', answer: 'ingresso/gratis' }} index={22} />
+        <ExerciseItem part={{ type: 'fill', question: '__________ è? (Quando è?)', answer: 'quando' }} index={20} />
+        <ExerciseItem part={{ type: 'fill', question: 'Cosa __________ __________?', answer: 'si fa' }} index={21} />
+        <ExerciseItem part={{ type: 'fill', question: 'Quanto __________?', answer: 'costa' }} index={22} />
+        <ExerciseItem part={{ type: 'fill', question: 'Bisogna pagare l’__________ o è __________?', answer: 'ingresso/gratis' }} index={23} />
       </div>
 
       {/* Exercise 5 */}
@@ -310,32 +297,17 @@ const Lesson1Exercises = () => {
 
       {/* Exercise 7 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Punto di vista di un bambino</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (andavo / ero / mi piaceva / era / potevo / c’erano)</h4>
-        <div className="leading-loose">
-            Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a in una città piccola. 
-            La città <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (era) tranquilla e 
-            <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (c'erano) molti parchi. 
-            In estate <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (andavo) al parco con i miei amici e 
-            <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (potevo) giocare fuori fino a tardi. 
-            <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (Mi piaceva) molto anche andare in biblioteca.
-        </div>
-      </div>
-
-      {/* Exercise 8 */}
-      <div className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Mini-paragrafo finale</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a/* / secondo me / per esempio</h4>
         
-        {/* Replaced hardcoded div with CheckableParagraph component */}
         <CheckableParagraph />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2 italic">
             Scrivi il tuo paragrafo qui sotto e poi caricalo sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
-        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={27} />
+        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a/* dal punto di vista di un bambino”</p>
+        <ExerciseItem part={{ type: 'write', question: '' }} index={24} />
       </div>
     </div>
   );
