@@ -11,6 +11,10 @@ interface ExercisePart {
 }
 
 const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) => {
+  // Logic allows for multiple gaps if answer is split by '|'
+  // But current implementation binds all inputs to one state. 
+  // For this specific file, existing exercises seem to use single words or simple phrases.
+  // We will keep this as is for compatibility with existing simple items.
   const [userAnswer, setUserAnswer] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -18,11 +22,8 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
   const checkAnswer = () => {
     if (!part.answer) return;
     
-    // Normalize answers for comparison (lowercase, trim)
     const normalizedUser = userAnswer.toLowerCase().trim();
     const normalizedCorrect = part.answer.toLowerCase().trim();
-    
-    // Handle multiple correct options separated by /
     const correctOptions = normalizedCorrect.split('/').map(s => s.trim());
     
     setIsCorrect(correctOptions.includes(normalizedUser));
@@ -96,6 +97,118 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
   );
 };
 
+// New Component for Multi-Gap Paragraphs
+const CheckableParagraph = () => {
+    const [answers, setAnswers] = useState({
+        gap1: '',
+        gap2: '',
+        gap3: '',
+        gap4: ''
+    });
+    const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
+
+    const correctAnswers = {
+        gap1: ['da piccolo', 'da piccola', 'da piccolo/a'],
+        gap2: ['perché', 'perche'],
+        gap3: ['per esempio'],
+        gap4: ['secondo me']
+    };
+
+    const handleChange = (key: string, value: string) => {
+        setAnswers(prev => ({ ...prev, [key]: value }));
+        if (results) setResults(null); // Reset results on change
+    };
+
+    const checkAll = () => {
+        const newResults: { [key: string]: boolean } = {};
+        let allCorrect = true;
+
+        (Object.keys(correctAnswers) as Array<keyof typeof correctAnswers>).forEach(key => {
+            const userVal = answers[key].toLowerCase().trim();
+            const isCorrect = correctAnswers[key].includes(userVal);
+            newResults[key] = isCorrect;
+            if (!isCorrect) allCorrect = false;
+        });
+
+        setResults(newResults);
+    };
+
+    const getInputClass = (key: string) => {
+        const baseClass = "border-b-2 bg-transparent text-center w-32 focus:outline-none mx-1 font-medium ";
+        if (!results) return baseClass + "border-slate-300 focus:border-indigo-500";
+        return baseClass + (results[key] ? "border-green-500 text-green-700" : "border-red-500 text-red-700");
+    };
+
+    return (
+        <div className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+            <div className="leading-loose text-lg">
+                Il posto dove sono cresciuto/a/* 
+                <span className="relative inline-block">
+                    <input 
+                        type="text" 
+                        value={answers.gap1}
+                        onChange={(e) => handleChange('gap1', e.target.value)}
+                        className={getInputClass('gap1')} 
+                    />
+                    {results && (results.gap1 ? 
+                        <Check size={16} className="absolute -right-5 top-1 text-green-600"/> : 
+                        <X size={16} className="absolute -right-5 top-1 text-red-600"/>
+                    )}
+                </span>
+                era molto interessante 
+                <span className="relative inline-block">
+                    <input 
+                        type="text" 
+                        value={answers.gap2}
+                        onChange={(e) => handleChange('gap2', e.target.value)}
+                        className={getInputClass('gap2')} 
+                    />
+                    {results && (results.gap2 ? 
+                        <Check size={16} className="absolute -right-5 top-1 text-green-600"/> : 
+                        <X size={16} className="absolute -right-5 top-1 text-red-600"/>
+                    )}
+                </span>
+                c'erano tantissime cose da fare e da scoprire con gli amici. 
+                <span className="relative inline-block">
+                    <input 
+                        type="text" 
+                        value={answers.gap3}
+                        onChange={(e) => handleChange('gap3', e.target.value)}
+                        className={getInputClass('gap3')} 
+                    />
+                    {results && (results.gap3 ? 
+                        <Check size={16} className="absolute -right-5 top-1 text-green-600"/> : 
+                        <X size={16} className="absolute -right-5 top-1 text-red-600"/>
+                    )}
+                </span>
+                , potevo andare al parco ogni pomeriggio o in biblioteca a leggere fumetti. 
+                <span className="relative inline-block">
+                    <input 
+                        type="text" 
+                        value={answers.gap4}
+                        onChange={(e) => handleChange('gap4', e.target.value)}
+                        className={getInputClass('gap4')} 
+                    />
+                    {results && (results.gap4 ? 
+                        <Check size={16} className="absolute -right-5 top-1 text-green-600"/> : 
+                        <X size={16} className="absolute -right-5 top-1 text-red-600"/>
+                    )}
+                </span>
+                quel periodo della mia vita è stato il più divertente di tutti.
+            </div>
+            
+            <div className="mt-6">
+                <button 
+                    onClick={checkAll}
+                    className="px-6 py-2 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 transition-colors shadow-sm font-bold"
+                >
+                    Controlla risposte
+                </button>
+            </div>
+        </div>
+    );
+};
+
 const Lesson1Exercises = () => {
   return (
     <div className="space-y-8">
@@ -121,34 +234,38 @@ const Lesson1Exercises = () => {
             Scrivi le tue risposte qui sotto e poi caricale sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi 3 frasi su di te: 2 cose che ti interessano, 1 cosa che non ti interessa.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={7} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={5} />
       </div>
 
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: gli / le</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={11} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={6} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={7} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={8} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={9} />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={12} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={10} />
       </div>
 
       {/* Exercise 3 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 3: “Quale evento ti interessa di più?”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: mi / ti / gli / le / ci / vi / gli</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={12} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={13} />
-        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={14} />
-        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={15} />
-        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={16} />
-        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={17} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={18} />
+        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={11} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={12} />
+        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={13} />
+        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={14} />
+        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={15} />
+        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={16} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={17} />
+
+        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
+        <p className="text-sm text-slate-600 mb-2">Rispondi in 3–4 righe: Quale evento della lista ti interessa di più? Perché?</p>
+        <ExerciseItem part={{ type: 'write', question: '' }} index={18} />
       </div>
 
       {/* Exercise 4 */}
@@ -196,7 +313,7 @@ const Lesson1Exercises = () => {
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 7: Punto di vista di un bambino</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con i verbi all’imperfetto (andavo / ero / mi piaceva / era / potevo / c’erano)</h4>
         <div className="leading-loose">
-            Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a/* in una città piccola. 
+            Da bambino/a, <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (ero) cresciuto/a in una città piccola. 
             La città <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (era) tranquilla e 
             <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (c'erano) molti parchi. 
             In estate <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (andavo) al parco con i miei amici e 
@@ -209,19 +326,16 @@ const Lesson1Exercises = () => {
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a/* / secondo me / per esempio</h4>
-        <div className="leading-loose bg-slate-50 p-6 rounded-lg border border-slate-100">
-            Il posto dove sono cresciuto/a/* <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era molto interessante 
-            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> c'erano tantissime cose da fare e da scoprire con gli amici. 
-            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , potevo andare al parco ogni pomeriggio o in biblioteca a leggere fumetti. 
-            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> quel periodo della mia vita è stato il più divertente di tutti.
-        </div>
+        
+        {/* Replaced hardcoded div with CheckableParagraph component */}
+        <CheckableParagraph />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2 italic">
             Scrivi il tuo paragrafo qui sotto e poi caricalo sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
-        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a/* dal punto di vista di un bambino”</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
+        <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
+        <ExerciseItem part={{ type: 'write', question: '' }} index={27} />
       </div>
     </div>
   );
