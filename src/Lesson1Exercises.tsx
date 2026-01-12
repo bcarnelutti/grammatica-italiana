@@ -111,11 +111,11 @@ const MatchingExercise = () => {
     const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
 
     const correctAnswers = {
-        item1: 'C',
-        item2: 'A',
-        item3: 'D',
-        item4: 'B',
-        item5: 'E'
+        item1: 'D', // 1. Marco (leggere) -> D. scoprire nuovi autori
+        item2: 'A', // 2. Sara (storia) -> A. feste storiche
+        item3: 'E', // 3. Giulia (Natale) -> E. addobbi
+        item4: 'B', // 4. Noi (viaggiare) -> B. posti nuovi
+        item5: 'C'  // 5. Sam e Leo (cibo) -> C. dolci
     };
 
     const handleChange = (key: string, value: string) => {
@@ -151,22 +151,22 @@ const MatchingExercise = () => {
 
                 <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <input type="text" value={answers.item2} onChange={(e) => handleChange('item2', e.target.value)} className={getInputClass('item2')} placeholder="?" maxLength={1} />
-                    <span className="font-medium text-slate-700">2. A Giulia piace il Natale</span>
+                    <span className="font-medium text-slate-700">2. A Sara piace la storia</span>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <input type="text" value={answers.item3} onChange={(e) => handleChange('item3', e.target.value)} className={getInputClass('item3')} placeholder="?" maxLength={1} />
-                    <span className="font-medium text-slate-700">3. A Sam e Leo piace il cibo</span>
+                    <span className="font-medium text-slate-700">3. A Giulia piace il Natale</span>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <input type="text" value={answers.item4} onChange={(e) => handleChange('item4', e.target.value)} className={getInputClass('item4')} placeholder="?" maxLength={1} />
-                    <span className="font-medium text-slate-700">4. A Sara piace la storia</span>
+                    <span className="font-medium text-slate-700">4. A noi piace viaggiare</span>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <input type="text" value={answers.item5} onChange={(e) => handleChange('item5', e.target.value)} className={getInputClass('item5')} placeholder="?" maxLength={1} />
-                    <span className="font-medium text-slate-700">5. A noi piace viaggiare</span>
+                    <span className="font-medium text-slate-700">5. A Sam e Leo piace il cibo</span>
                 </div>
                 
                 <button 
@@ -183,27 +183,27 @@ const MatchingExercise = () => {
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">A</div>
-                    <span className="text-slate-700 py-1">...le interessa comprare gli addobbi per l’albero.</span>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
-                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">B</div>
                     <span className="text-slate-700 py-1">...le interessano le feste storiche.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
-                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">C</div>
-                    <span className="text-slate-700 py-1">...gli interessa scoprire nuovi autori.</span>
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">B</div>
+                    <span className="text-slate-700 py-1">...ci interessa vedere posti nuovi.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
-                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">C</div>
                     <span className="text-slate-700 py-1">...gli interessano dolci diversi e spettacolari.</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
+                    <span className="text-slate-700 py-1">...gli interessa scoprire nuovi autori.</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">E</div>
-                    <span className="text-slate-700 py-1">...ci interessa vedere posti nuovi.</span>
+                    <span className="text-slate-700 py-1">...le interessa comprare gli addobbi per l’albero.</span>
                 </div>
             </div>
         </div>
