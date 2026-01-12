@@ -458,10 +458,6 @@ const Lesson1Exercises = () => {
         <h4 className="font-bold text-slate-700 mb-4">A. Abbina la persona all'interesse corretto (Scrivi la lettera)</h4>
         
         <MatchingExercise />
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={12} />
       </div>
 
       {/* Exercise 3 */}
