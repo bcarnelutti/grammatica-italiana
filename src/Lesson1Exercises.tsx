@@ -93,7 +93,111 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
   );
 };
 
-// New Component for PARTE 5 Event Card
+// New Component for Matching Exercises (Column A -> Column B)
+const MatchingExercise = () => {
+    // Correct mapping:
+    // 1. Marco (leggere) -> C (gli interessa scoprire nuovi autori)
+    // 2. Giulia (Natale) -> A (le interessa comprare addobbi)
+    // 3. Sam e Leo (cibo) -> D (gli interessano dolci)
+    // 4. Sara (storia) -> B (le interessano feste storiche)
+
+    const [answers, setAnswers] = useState({
+        item1: '',
+        item2: '',
+        item3: '',
+        item4: ''
+    });
+    const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
+
+    const correctAnswers = {
+        item1: 'C',
+        item2: 'A',
+        item3: 'D',
+        item4: 'B'
+    };
+
+    const handleChange = (key: string, value: string) => {
+        setAnswers(prev => ({ ...prev, [key]: value.toUpperCase().slice(0, 1) }));
+        if (results) setResults(null);
+    };
+
+    const checkAll = () => {
+        const newResults: { [key: string]: boolean } = {};
+        (Object.keys(correctAnswers) as Array<keyof typeof correctAnswers>).forEach(key => {
+            const userVal = answers[key].trim().toUpperCase();
+            newResults[key] = userVal === correctAnswers[key];
+        });
+        setResults(newResults);
+    };
+
+    const getInputClass = (key: string) => {
+        const baseClass = "border-2 w-10 h-10 text-center rounded-lg focus:outline-none font-bold text-lg ";
+        if (!results) return baseClass + "border-slate-300 focus:border-indigo-500";
+        return baseClass + (results[key] ? "border-green-500 text-green-700 bg-green-50" : "border-red-500 text-red-700 bg-red-50");
+    };
+
+    return (
+        <div className="grid md:grid-cols-2 gap-8">
+            {/* Column 1: Premises with Input */}
+            <div className="space-y-4">
+                <h5 className="font-bold text-slate-500 uppercase text-xs tracking-wider mb-2">Persone</h5>
+                
+                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <input type="text" value={answers.item1} onChange={(e) => handleChange('item1', e.target.value)} className={getInputClass('item1')} placeholder="?" maxLength={1} />
+                    <span className="font-medium text-slate-700">1. A Marco piace leggere</span>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <input type="text" value={answers.item2} onChange={(e) => handleChange('item2', e.target.value)} className={getInputClass('item2')} placeholder="?" maxLength={1} />
+                    <span className="font-medium text-slate-700">2. A Giulia piace il Natale</span>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <input type="text" value={answers.item3} onChange={(e) => handleChange('item3', e.target.value)} className={getInputClass('item3')} placeholder="?" maxLength={1} />
+                    <span className="font-medium text-slate-700">3. A Sam e Leo piace il cibo</span>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <input type="text" value={answers.item4} onChange={(e) => handleChange('item4', e.target.value)} className={getInputClass('item4')} placeholder="?" maxLength={1} />
+                    <span className="font-medium text-slate-700">4. A Sara piace la storia</span>
+                </div>
+                
+                <button 
+                    onClick={checkAll}
+                    className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 transition-colors shadow-sm font-bold w-full md:w-auto"
+                >
+                    Controlla abbinamenti
+                </button>
+            </div>
+
+            {/* Column 2: Completions with Letters */}
+            <div className="space-y-4">
+                <h5 className="font-bold text-slate-500 uppercase text-xs tracking-wider mb-2">Interessi</h5>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">A</div>
+                    <span className="text-slate-700 py-1">...le interessa comprare gli addobbi per l’albero.</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">B</div>
+                    <span className="text-slate-700 py-1">...le interessano le feste storiche.</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">C</div>
+                    <span className="text-slate-700 py-1">...gli interessa scoprire nuovi autori.</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
+                    <span className="text-slate-700 py-1">...gli interessano dolci diversi e spettacolari.</span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const CheckableEventCard = () => {
     const [answers, setAnswers] = useState({
         quando: '',
@@ -339,29 +443,9 @@ const Lesson1Exercises = () => {
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
-        <h4 className="font-bold text-slate-700 mb-4">A. Completa con: gli / le</h4>
+        <h4 className="font-bold text-slate-700 mb-4">A. Abbina la persona all'interesse corretto (Scrivi la lettera)</h4>
         
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <span className="font-medium text-slate-700">A Marco piace leggere</span>
-            </div>
-            <ExerciseItem part={{ type: 'fill', question: '____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
-
-            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <span className="font-medium text-slate-700">A Giulia piace il Natale</span>
-            </div>
-            <ExerciseItem part={{ type: 'fill', question: '____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
-
-            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <span className="font-medium text-slate-700">A Sam e Leo piace il cibo</span>
-            </div>
-            <ExerciseItem part={{ type: 'fill', question: '____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
-
-            <div className="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <span className="font-medium text-slate-700">A Sara piace la storia</span>
-            </div>
-            <ExerciseItem part={{ type: 'fill', question: '____ interessano le feste storiche.', answer: 'le' }} index={11} />
-        </div>
+        <MatchingExercise />
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
         <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
