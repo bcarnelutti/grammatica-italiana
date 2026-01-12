@@ -209,10 +209,11 @@ const Lesson1Exercises = () => {
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: da piccolo/a / secondo me / per esempio / perché</h4>
-        <div className="leading-loose">
-            <input type="text" className="border-b w-32 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (Da piccolo/a), il posto dove sono cresciuto/a era interessante 
-            <input type="text" className="border-b w-32 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (perché) era pieno di cose da fare. 
-            <input type="text" className="border-b w-32 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (Per esempio), potevo andare...
+        <div className="leading-loose bg-slate-50 p-6 rounded-lg border border-slate-100">
+            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , il posto dove sono cresciuto/a era molto interessante 
+            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era pieno di cose da fare e di posti da scoprire con gli amici. 
+            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , potevo andare al parco ogni pomeriggio o in biblioteca a leggere fumetti. 
+            <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> , quel periodo della mia vita è stato il più divertente di tutti.
         </div>
 
         <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
