@@ -121,38 +121,30 @@ const Lesson1Exercises = () => {
             Scrivi le tue risposte qui sotto e poi caricale sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi 3 frasi su di te: 2 cose che ti interessano, 1 cosa che non ti interessa.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={5} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={7} />
       </div>
 
       {/* Exercise 2 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 2: A chi interessa cosa?</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: gli / le</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={6} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={7} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={8} />
-        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={9} />
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scegli 2 persone (inventale) e scrivi per ognuna 1 frase con le/gli interessa + motivo.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={10} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Marco piace leggere: ____ interessa scoprire nuovi autori.', answer: 'gli' }} index={8} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Giulia piace il Natale: ____ interessa comprare gli addobbi per l’albero.', answer: 'le' }} index={9} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sam e Leo piace il cibo: ____ interessano dolci diversi e spettacolari.', answer: 'gli' }} index={10} />
+        <ExerciseItem part={{ type: 'fill', question: 'A Sara piace la storia: ____ interessano le feste storiche.', answer: 'le' }} index={11} />
       </div>
 
       {/* Exercise 3 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 3: “Quale evento ti interessa di più?”</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa con: mi / ti / gli / le / ci / vi / gli</h4>
-        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={11} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={12} />
-        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={13} />
-        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={14} />
-        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={15} />
-        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={16} />
-        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={17} />
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Rispondi in 3–4 righe: Quale evento della lista ti interessa di più? Perché?</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={18} />
+        <ExerciseItem part={{ type: 'fill', question: 'A voi ___ interessa partecipare?', answer: 'vi' }} index={12} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lei ___ interessa molto la mostra.', answer: 'le' }} index={13} />
+        <ExerciseItem part={{ type: 'fill', question: 'A me ___ interessano i mercatini.', answer: 'mi' }} index={14} />
+        <ExerciseItem part={{ type: 'fill', question: 'A loro ___ interessa la festa storica.', answer: 'gli' }} index={15} />
+        <ExerciseItem part={{ type: 'fill', question: 'A te ___ interessa l’evento X?', answer: 'ti' }} index={16} />
+        <ExerciseItem part={{ type: 'fill', question: 'A noi ___ interessano gli eventi gratuiti.', answer: 'ci' }} index={17} />
+        <ExerciseItem part={{ type: 'fill', question: 'A lui ___ interessa scoprire nuovi autori.', answer: 'gli' }} index={18} />
       </div>
 
       {/* Exercise 4 */}
@@ -163,10 +155,6 @@ const Lesson1Exercises = () => {
         <ExerciseItem part={{ type: 'fill', question: 'Cosa __________ __________?', answer: 'si fa' }} index={20} />
         <ExerciseItem part={{ type: 'fill', question: 'Quanto __________?', answer: 'costa' }} index={21} />
         <ExerciseItem part={{ type: 'fill', question: 'Bisogna pagare l’__________ o è __________?', answer: 'ingresso/gratis' }} index={22} />
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scegli un evento e scrivi 4 domande per saperne di più.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
       </div>
 
       {/* Exercise 5 */}
@@ -181,10 +169,6 @@ const Lesson1Exercises = () => {
             <div className="flex items-center gap-2">Quanto costa: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="10€ / oppure gratis" /></div>
             <div className="flex items-center gap-2">A che ora comincia: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="alle 18:00" /></div>
         </div>
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scrivi 5 frasi per invitare un/a compagno/a all’evento usando le info della scheda.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={24} />
       </div>
 
       {/* Exercise 6 */}
@@ -201,10 +185,6 @@ const Lesson1Exercises = () => {
             <p>S1: Costa __________ / È __________.</p>
             <p>S2: Bello! Allora andiamo __________.</p>
         </div>
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scrivi un nuovo dialogo (8–10 battute) con un evento diverso.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={25} />
       </div>
 
       {/* Exercise 7 */}
@@ -219,10 +199,6 @@ const Lesson1Exercises = () => {
             <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (potevo) giocare fuori fino a tardi. 
             <input type="text" className="border-b w-20 text-center mx-1 focus:outline-none focus:border-indigo-500" /> (Mi piaceva) molto anche andare in biblioteca.
         </div>
-
-        <h4 className="font-bold text-slate-700 mt-6 mb-2">B. Scrittura</h4>
-        <p className="text-sm text-slate-600 mb-2">Scrivi 4 frasi su com’era il tuo quartiere/paese/città da bambino/a.</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={26} />
       </div>
 
       {/* Exercise 8 */}
@@ -240,7 +216,7 @@ const Lesson1Exercises = () => {
             Scrivi il tuo paragrafo qui sotto e poi caricalo sul <a href="https://brightspace.cuny.edu/d2l/le/1128170/discussions/List" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline font-bold">Forum di Brightspace</a>.
         </p>
         <p className="text-sm text-slate-600 mb-2">Scrivi un paragrafo di 8–10 righe: “Il posto dove sono cresciuto/a dal punto di vista di un bambino”</p>
-        <ExerciseItem part={{ type: 'write', question: '' }} index={27} />
+        <ExerciseItem part={{ type: 'write', question: '' }} index={23} />
       </div>
     </div>
   );
