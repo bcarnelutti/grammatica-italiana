@@ -105,7 +105,8 @@ const MatchingExercise = () => {
         item1: '',
         item2: '',
         item3: '',
-        item4: ''
+        item4: '',
+        item5: ''
     });
     const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
 
@@ -113,7 +114,8 @@ const MatchingExercise = () => {
         item1: 'C',
         item2: 'A',
         item3: 'D',
-        item4: 'B'
+        item4: 'B',
+        item5: 'E'
     };
 
     const handleChange = (key: string, value: string) => {
@@ -161,6 +163,11 @@ const MatchingExercise = () => {
                     <input type="text" value={answers.item4} onChange={(e) => handleChange('item4', e.target.value)} className={getInputClass('item4')} placeholder="?" maxLength={1} />
                     <span className="font-medium text-slate-700">4. A Sara piace la storia</span>
                 </div>
+
+                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <input type="text" value={answers.item5} onChange={(e) => handleChange('item5', e.target.value)} className={getInputClass('item5')} placeholder="?" maxLength={1} />
+                    <span className="font-medium text-slate-700">5. A noi piace viaggiare</span>
+                </div>
                 
                 <button 
                     onClick={checkAll}
@@ -192,6 +199,11 @@ const MatchingExercise = () => {
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
                     <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">D</div>
                     <span className="text-slate-700 py-1">...gli interessano dolci diversi e spettacolari.</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-indigo-100 shadow-sm">
+                    <div className="bg-indigo-100 text-indigo-700 w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">E</div>
+                    <span className="text-slate-700 py-1">...ci interessa vedere posti nuovi.</span>
                 </div>
             </div>
         </div>
