@@ -208,7 +208,7 @@ const Lesson1Exercises = () => {
       {/* Exercise 8 */}
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 8: Mini-paragrafo finale</h3>
-        <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a / secondo me / per esempio</h4>
+        <h4 className="font-bold text-slate-700 mb-2">A. Completa con: perché / da piccolo/a/* / secondo me / per esempio</h4>
         <div className="leading-loose bg-slate-50 p-6 rounded-lg border border-slate-100">
             Il posto dove sono cresciuto/a/* <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> era molto interessante 
             <input type="text" className="border-b-2 border-slate-300 w-32 text-center mx-1 focus:outline-none focus:border-indigo-500 bg-transparent" /> c'erano tantissime cose da fare e da scoprire con gli amici. 
