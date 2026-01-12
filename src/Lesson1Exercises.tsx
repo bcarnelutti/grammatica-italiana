@@ -93,6 +93,114 @@ const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) =>
   );
 };
 
+// New Component for PARTE 5 Event Card
+const CheckableEventCard = () => {
+    const [answers, setAnswers] = useState({
+        quando: '',
+        dove: '',
+        cosa: '',
+        quanto1: '',
+        quanto2: '',
+        ora: ''
+    });
+    const [results, setResults] = useState<{ [key: string]: boolean } | null>(null);
+
+    const correctAnswers = {
+        quando: ['sabato'],
+        dove: ['in centro'],
+        cosa: ['degustazioni'],
+        quanto1: ['10€', '10 euro', '10'],
+        quanto2: ['gratis'],
+        ora: ['alle 18:00', '18:00', '18']
+    };
+
+    const handleChange = (key: string, value: string) => {
+        setAnswers(prev => ({ ...prev, [key]: value }));
+        if (results) setResults(null);
+    };
+
+    const checkAll = () => {
+        const newResults: { [key: string]: boolean } = {};
+        (Object.keys(correctAnswers) as Array<keyof typeof correctAnswers>).forEach(key => {
+            const userVal = answers[key].toLowerCase().trim();
+            newResults[key] = correctAnswers[key].includes(userVal);
+        });
+        setResults(newResults);
+    };
+
+    const getInputClass = (key: string) => {
+        const baseClass = "border-b-2 bg-transparent w-full focus:outline-none px-1 font-medium transition-colors ";
+        if (!results) return baseClass + "border-slate-300 focus:border-indigo-500";
+        return baseClass + (results[key] ? "border-green-500 text-green-700" : "border-red-500 text-red-700");
+    };
+
+    return (
+        <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 shadow-inner">
+            <div className="font-bold text-center border-b border-slate-200 pb-3 mb-6 text-xl text-indigo-900">
+                Evento: Festa dei Dolci
+            </div>
+            
+            <div className="space-y-6 max-w-md mx-auto">
+                <div className="flex flex-col gap-1">
+                    <label className="text-xs font-bold uppercase text-slate-400">Quando:</label>
+                    <div className="relative">
+                        <input type="text" value={answers.quando} onChange={(e) => handleChange('quando', e.target.value)} className={getInputClass('quando')} />
+                        {results && (results.quando ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <label className="text-xs font-bold uppercase text-slate-400">Dove:</label>
+                    <div className="relative">
+                        <input type="text" value={answers.dove} onChange={(e) => handleChange('dove', e.target.value)} className={getInputClass('dove')} />
+                        {results && (results.dove ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <label className="text-xs font-bold uppercase text-slate-400">Cosa si fa:</label>
+                    <div className="relative">
+                        <input type="text" value={answers.cosa} onChange={(e) => handleChange('cosa', e.target.value)} className={getInputClass('cosa')} />
+                        {results && (results.cosa ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <label className="text-xs font-bold uppercase text-slate-400">Quanto costa:</label>
+                    <div className="flex items-center gap-2">
+                        <div className="relative flex-1">
+                            <input type="text" value={answers.quanto1} onChange={(e) => handleChange('quanto1', e.target.value)} className={getInputClass('quanto1')} placeholder="Prezzo" />
+                            {results && (results.quanto1 ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                        </div>
+                        <span className="text-slate-400">/</span>
+                        <div className="relative flex-1">
+                            <input type="text" value={answers.quanto2} onChange={(e) => handleChange('quanto2', e.target.value)} className={getInputClass('quanto2')} placeholder="Opzione" />
+                            {results && (results.quanto2 ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <label className="text-xs font-bold uppercase text-slate-400">A che ora comincia:</label>
+                    <div className="relative">
+                        <input type="text" value={answers.ora} onChange={(e) => handleChange('ora', e.target.value)} className={getInputClass('ora')} />
+                        {results && (results.ora ? <Check size={16} className="absolute -right-6 top-1 text-green-600"/> : <X size={16} className="absolute -right-6 top-1 text-red-600"/>)}
+                    </div>
+                </div>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+                <button 
+                    onClick={checkAll}
+                    className="px-8 py-2.5 bg-indigo-600 text-white rounded-full text-sm hover:bg-indigo-700 transition-all shadow-md font-bold"
+                >
+                    Controlla Scheda
+                </button>
+            </div>
+        </div>
+    );
+};
+
 // New Component for Multi-Gap Paragraphs
 const CheckableParagraph = () => {
     const [answers, setAnswers] = useState({
@@ -269,14 +377,8 @@ const Lesson1Exercises = () => {
       <div className="bg-white p-6 rounded-xl border shadow-sm">
         <h3 className="text-xl font-bold text-indigo-900 mb-4">PARTE 5: Informazioni sull’evento</h3>
         <h4 className="font-bold text-slate-700 mb-2">A. Completa la scheda (usa le parole nel box: degustazioni / sabato / gratis / alle 18:00 / in centro / 10€)</h4>
-        <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
-            <div className="font-bold text-center border-b pb-2 mb-2">Evento: Festa dei Dolci</div>
-            <div className="flex items-center gap-2">Quando: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="sabato" /></div>
-            <div className="flex items-center gap-2">Dove: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="in centro" /></div>
-            <div className="flex items-center gap-2">Cosa si fa: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="degustazioni" /></div>
-            <div className="flex items-center gap-2">Quanto costa: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="10€ / oppure gratis" /></div>
-            <div className="flex items-center gap-2">A che ora comincia: <input type="text" className="border-b bg-transparent w-full focus:outline-none" placeholder="alle 18:00" /></div>
-        </div>
+        
+        <CheckableEventCard />
       </div>
 
       {/* Exercise 6 */}
