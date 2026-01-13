@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from './LanguageContext';
 import { X, MousePointerClick } from 'lucide-react';
+import VerbSearchTool from './components/VerbSearchTool';
 
 interface IrregularVerb {
   infinitive: string;
@@ -48,6 +49,8 @@ const VerbsPresentChart = () => {
 
   return (
     <div className="space-y-12">
+      <VerbSearchTool tense="presente" />
+
       {/* Regular Verbs Section */}
       <section className="my-12 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
         <h2 className="text-4xl font-serif text-center mb-12 text-gray-800 underline decoration-green-500 underline-offset-8">
