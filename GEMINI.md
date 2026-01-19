@@ -1,15 +1,49 @@
-# Italian Grammar Learning Tool
+# Italian Grammar Learning Tool (Grammatica Italiana)
+
+## Project Overview
+An interactive web application designed to help English speakers learn Italian grammar. The tool features dynamic charts, switchable language support (IT/EN), and interactive exercises with automatic validation.
 
 ## Key Features
-*   **Interactive Charts:** Dynamic visualization of grammar rules.
-*   **Dual Language:** Interface available in Italian and English.
-*   **Structured Learning:** Organized by core grammar concepts.
+*   **Interactive Grammar Charts:**
+    *   **Articles:** Comprehensive guide to Definite and Indefinite articles.
+    *   **Verbs:** Deep dive into 8 different categories:
+        *   Present Tense (including regular patterns and a clickable grid of 19 common irregulars + 6 -isc- verbs).
+        *   Passato Prossimo (Avere vs Essere, with a list of irregular past participles).
+        *   Imperfetto (Regular and common irregulars like essere, bere, dire, fare).
+        *   Simple Future (Regular patterns and phonetic rules).
+        *   Present Conditional.
+        *   Present Subjunctive.
+        *   Past Subjunctive.
+        *   Reflexive Verbs (Construction rules and compound tense usage).
+    *   **Prepositions:** Simple and Articulated preposition tables.
+*   **Vocabulary Section:** Categorized word lists (Clothing, Health, etc.) with gender labels and translations.
+*   **Exercises (Esercizi):** 
+    *   Interactive modules for Lesson 1 (Italian 202).
+    *   Features: Shuffled matching tasks, fill-in-the-blanks with individual checking, and writing prompts linked to the Brightspace Forum.
+*   **Multi-language Support:** Full interface and explanation translations for both English and Italian students.
 
-## Key Files
-*   `src/App.tsx`: Main UI logic.
-*   `src/ArticlesChart.tsx`: Article rules.
-*   `src/VerbsPresentChart.tsx`: Verb conjugations.
-*   `src/PrepositionsChart.tsx`: Preposition tables.
-*   `src/VocabularyChart.tsx`: Word lists.
-*   `src/vocabularyData.ts`: Centralized vocabulary database.
-*   `src/translations.ts`: I18n strings.
+## Architecture & Tech Stack
+*   **Framework:** React 19
+*   **Language:** TypeScript
+*   **Build Tool:** Vite
+*   **Styling:** Tailwind CSS v4
+*   **Animation:** Framer Motion
+*   **State Management:** 
+    *   `ChartContext`: Manages navigation state (`ViewState`) across the app.
+    *   `LanguageContext`: Manages global localization (IT/EN).
+
+## Core File Structure
+*   `src/App.tsx`: Main layout, navigation, and top-level routing.
+*   `src/ChartContext.tsx`: Centralized view state and context provider.
+*   `src/LanguageContext.tsx`: I18n provider and translation hook.
+*   `src/translations.ts`: Master dictionary for all localized text.
+*   `src/vocabularyData.ts`: Database for vocabulary items.
+*   `src/ArticlesChart.tsx`: Logic for Italian articles.
+*   `src/VerbsMenu.tsx`: Sub-navigation for the verbs section.
+*   `src/Verbs...Chart.tsx`: Specialized components for each verb tense.
+*   `src/Exercises.tsx`: Container for the exercises section.
+*   `src/Lesson1Exercises.tsx`: Interactive exercise items and validation logic.
+
+## Licensing
+*   **Web App:** MIT License.
+*   **Content:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
