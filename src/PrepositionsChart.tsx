@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { useLanguage } from './LanguageContext';
 
 const PrepositionsChart = () => {

@@ -31,7 +31,7 @@ const colors: Record<string, string> = {
 };
 
 const VocabularyChart = ({ topic }: VocabularyChartProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [selectedWord, setSelectedWord] = useState<VocabItem | null>(null);
   
   const items = [...vocabularyData[topic]].sort((a, b) => a.it.localeCompare(b.it));

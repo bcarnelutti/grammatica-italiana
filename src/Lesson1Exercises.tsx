@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
 interface ExercisePart {
@@ -10,7 +9,7 @@ interface ExercisePart {
   placeholder?: string;
 }
 
-const ExerciseItem = ({ part, index }: { part: ExercisePart; index: number }) => {
+const ExerciseItem = ({ part }: { part: ExercisePart; index: number }) => {
   const [userAnswer, setUserAnswer] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);

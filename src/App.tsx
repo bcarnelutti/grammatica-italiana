@@ -1,4 +1,3 @@
-import { useState, createContext, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Shirt, Stethoscope, Plane, GraduationCap, User, Trees, Gift, Dumbbell } from 'lucide-react';
 
