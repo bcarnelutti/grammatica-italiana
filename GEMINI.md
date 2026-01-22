@@ -22,6 +22,10 @@ An interactive web application designed to help English speakers learn Italian g
     *   Features: Shuffled matching tasks, fill-in-the-blanks with individual checking, and writing prompts linked to the Brightspace Forum.
 *   **Multi-language Support:** Full interface and explanation translations for both English and Italian students.
 
+## Deployment
+*   **Automatic Deployment:** The project is configured with GitHub Actions to automatically deploy to GitHub Pages on every push to the `main` branch. 
+*   **Workflow:** Every code modification must be committed and pushed to trigger the update on: https://bcarnelutti.github.io/grammatica-italiana/
+
 ## Architecture & Tech Stack
 *   **Framework:** React 19
 *   **Language:** TypeScript
