@@ -5,6 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/grammatica-italiana/' : '/',
+  server: {
+    host: '127.0.0.1',
+    port: 5177,
+    strictPort: true,
+  },
   plugins: [
     react(),
     tailwindcss(),
