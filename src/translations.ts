@@ -92,6 +92,16 @@ export const translations = {
         vi: "vi (voi)",
         li: "li (loro maschile)",
         le: "le (loro femminile)"
+      },
+      examples: {
+        mi: "Mi vedi?",
+        ti: "Ti ascolto.",
+        lo: "Lo compro.",
+        la: "La chiamo.",
+        ci: "Ci invitano.",
+        vi: "Vi aiuto.",
+        li: "Li mangio.",
+        le: "Le leggo."
       }
     },
     prepositions: {
@@ -216,6 +226,16 @@ export const translations = {
         vi: "vi (you all)",
         li: "li (them masculine)",
         le: "le (them feminine)"
+      },
+      examples: {
+        mi: "Mi vedi? (Do you see me?)",
+        ti: "Ti ascolto. (I'm listening to you)",
+        lo: "Lo compro. (I'll buy it)",
+        la: "La chiamo. (I'm calling her)",
+        ci: "Ci invitano. (They're inviting us)",
+        vi: "Vi aiuto. (I'll help you all)",
+        li: "Li mangio. (I eat them)",
+        le: "Le leggo. (I read them)"
       }
     },
     prepositions: {

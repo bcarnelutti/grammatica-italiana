@@ -8,15 +8,28 @@ const PronomiOggettoDirettoChart = () => {
   const { setView } = useChartContext();
 
   const pronouns = [
-    { form: 'mi', label: t('pronomi.list.mi') },
-    { form: 'ti', label: t('pronomi.list.ti') },
-    { form: 'lo', label: t('pronomi.list.lo') },
-    { form: 'la', label: t('pronomi.list.la') },
-    { form: 'ci', label: t('pronomi.list.ci') },
-    { form: 'vi', label: t('pronomi.list.vi') },
-    { form: 'li', label: t('pronomi.list.li') },
-    { form: 'le', label: t('pronomi.list.le') },
+    { form: 'mi', label: t('pronomi.list.mi'), example: t('pronomi.examples.mi') },
+    { form: 'ti', label: t('pronomi.list.ti'), example: t('pronomi.examples.ti') },
+    { form: 'lo', label: t('pronomi.list.lo'), example: t('pronomi.examples.lo') },
+    { form: 'la', label: t('pronomi.list.la'), example: t('pronomi.examples.la') },
+    { form: 'ci', label: t('pronomi.list.ci'), example: t('pronomi.examples.ci') },
+    { form: 'vi', label: t('pronomi.list.vi'), example: t('pronomi.examples.vi') },
+    { form: 'li', label: t('pronomi.list.li'), example: t('pronomi.examples.li') },
+    { form: 'le', label: t('pronomi.list.le'), example: t('pronomi.examples.le') },
   ];
+
+  const renderExample = (sentence: string, pronoun: string) => {
+    const parts = sentence.split(new RegExp(`(\\b${pronoun}\\b)`, 'gi'));
+    return (
+      <p className="text-sm text-slate-500 mt-1 italic">
+        {parts.map((part, i) => 
+          part.toLowerCase() === pronoun.toLowerCase() 
+            ? <strong key={i} className="text-indigo-600 font-bold">{part}</strong> 
+            : part
+        )}
+      </p>
+    );
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8">
@@ -51,10 +64,13 @@ const PronomiOggettoDirettoChart = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-indigo-50/50 transition-colors"
+                className="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-indigo-50/50 transition-colors"
               >
-                <span className="text-2xl font-bold text-indigo-700">{item.form}</span>
-                <span className="text-slate-600 font-medium">{item.label}</span>
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-2xl font-bold text-indigo-700">{item.form}</span>
+                  <span className="text-slate-600 font-medium">{item.label}</span>
+                </div>
+                {renderExample(item.example, item.form)}
               </motion.div>
             ))}
           </div>
