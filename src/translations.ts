@@ -95,14 +95,14 @@ export const translations = {
         le: "le (loro femminile)"
       },
       examples: {
-        mi: "Mi vedi?",
-        ti: "Ti ascolto.",
-        lo: "Lo compro.",
-        la: "La chiamo.",
-        ci: "Ci invitano.",
-        vi: "Vi aiuto.",
-        li: "Li mangio.",
-        le: "Le leggo."
+        mi: "Mi vedi? (tu)",
+        ti: "Ti ascolto. (io)",
+        lo: "Lo compro. (io)",
+        la: "La chiamo. (io)",
+        ci: "Ci invitano. (loro)",
+        vi: "Vi aiuto. (io)",
+        li: "Li mangio. (io)",
+        le: "Le leggo. (io)"
       }
     },
     prepositions: {
@@ -230,14 +230,14 @@ export const translations = {
         le: "le (loro - them f.)"
       },
       examples: {
-        mi: "Mi vedi? (Do you see me?)",
-        ti: "Ti ascolto. (I'm listening to you)",
-        lo: "Lo compro. (I'll buy it)",
-        la: "La chiamo. (I'm calling her)",
-        ci: "Ci invitano. (They're inviting us)",
-        vi: "Vi aiuto. (I'll help you all)",
-        li: "Li mangio. (I eat them)",
-        le: "Le leggo. (I read them)"
+        mi: "Mi vedi? (tu) (Do you see me?)",
+        ti: "Ti ascolto. (io) (I'm listening to you)",
+        lo: "Lo compro. (io) (I'll buy it)",
+        la: "La chiamo. (io) (I'm calling her)",
+        ci: "Ci invitano. (loro) (They're inviting us)",
+        vi: "Vi aiuto. (io) (I'll help you all)",
+        li: "Li mangio. (io) (I eat them)",
+        le: "Le leggo. (io) (I read them)"
       }
     },
     prepositions: {
