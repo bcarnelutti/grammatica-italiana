@@ -83,7 +83,7 @@ export const translations = {
     pronomi: {
       oggettoDirettoTitle: "Pronomi Oggetto Diretto",
       oggettoDirettoDesc: "I pronomi oggetto diretto (Direct Object Pronouns) sostituiscono un nome che è l'oggetto diretto del verbo. Rispondono alla domanda 'Chi?' o 'Che cosa?'. Si mettono generalmente PRIMA del verbo coniugato.",
-      explanationExample: "Mangi la mela? Sì, la mangio. (Do you eat the apple? Yes, I eat it).",
+      explanationExample: "Do you eat the apple? Yes, I eat it (Mangi la mela? Sì, la mangio).",
       list: {
         mi: "mi (io)",
         ti: "ti (tu)",
