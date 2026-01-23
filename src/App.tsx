@@ -99,16 +99,6 @@ const Navigation = () => {
         {t('nav.vocabulary')}
       </button>
       <button
-        onClick={() => setView('exercises')}
-        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
-          view === 'exercises'
-            ? 'bg-indigo-600 text-white shadow-lg scale-105'
-            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
-        }`}
-      >
-        {t('nav.exercises')}
-      </button>
-      <button
         onClick={() => setView('practice_menu')}
         className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
           isPracticeActive
@@ -117,6 +107,16 @@ const Navigation = () => {
         }`}
       >
         {t('nav.practice')}
+      </button>
+      <button
+        onClick={() => setView('exercises')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          view === 'exercises'
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.exercises')}
       </button>
     </div>
   );
