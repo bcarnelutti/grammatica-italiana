@@ -33,16 +33,16 @@ export const translations = {
       correct: "Corretto!",
       incorrect: "Riprova.",
       sentences1: [
-        { q: "Guardo *la TV*.", a: "La" },
-        { q: "Mangio *il panino*.", a: "Lo" },
-        { q: "Chiamo *mia madre*.", a: "La" },
-        { q: "Compro *i libri*.", a: "Li" },
-        { q: "Vedo *le ragazze*.", a: "Le" },
-        { q: "Ascolto *il professore*.", a: "Lo" },
-        { q: "Bevo *il caffè*.", a: "Lo" },
-        { q: "Invito *gli amici*.", a: "Li" },
-        { q: "Chiudo *la porta*.", a: "La" },
-        { q: "Saluto *te*.", a: "Ti" }
+        { q: "Io guardo la TV.", a: "Io *la* guardo.", missing: "la" },
+        { q: "Tu mangi il panino.", a: "Tu *lo* mangi.", missing: "lo" },
+        { q: "Lui chiama sua madre.", a: "Lui *la* chiama.", missing: "la" },
+        { q: "Noi compriamo i libri.", a: "Noi *li* compriamo.", missing: "li" },
+        { q: "Voi vedete le ragazze.", a: "Voi *le* vedete.", missing: "le" },
+        { q: "Loro ascoltano il professore.", a: "Loro *lo* ascoltano.", missing: "lo" },
+        { q: "Lei beve il caffè.", a: "Lei *lo* beve.", missing: "lo" },
+        { q: "Io invito gli amici.", a: "Io *li* invito.", missing: "li" },
+        { q: "Tu chiudi la porta.", a: "Tu *la* chiudi.", missing: "la" },
+        { q: "Loro salutano te.", a: "Loro *ti* salutano.", missing: "ti" }
       ],
       sentences2: [
         { q: "Compri il biglietto?", a: "Sì, *lo* compro.", missing: "lo" },
@@ -220,16 +220,16 @@ export const translations = {
       correct: "Correct!",
       incorrect: "Retry.",
       sentences1: [
-        { q: "Guardo *la TV*.", a: "La" },
-        { q: "Mangio *il panino*.", a: "Lo" },
-        { q: "Chiamo *mia madre*.", a: "La" },
-        { q: "Compro *i libri*.", a: "Li" },
-        { q: "Vedo *le ragazze*.", a: "Le" },
-        { q: "Ascolto *il professore*.", a: "Lo" },
-        { q: "Bevo *il caffè*.", a: "Lo" },
-        { q: "Invito *gli amici*.", a: "Li" },
-        { q: "Chiudo *la porta*.", a: "La" },
-        { q: "Saluto *te*.", a: "Ti" }
+        { q: "Io guardo la TV.", a: "Io *la* guardo.", missing: "la" },
+        { q: "Tu mangi il panino.", a: "Tu *lo* mangi.", missing: "lo" },
+        { q: "Lui chiama sua madre.", a: "Lui *la* chiama.", missing: "la" },
+        { q: "Noi compriamo i libri.", a: "Noi *li* compriamo.", missing: "li" },
+        { q: "Voi vedete le ragazze.", a: "Voi *le* vedete.", missing: "le" },
+        { q: "Loro ascoltano il professore.", a: "Loro *lo* ascoltano.", missing: "lo" },
+        { q: "Lei beve il caffè.", a: "Lei *lo* beve.", missing: "lo" },
+        { q: "Io invito gli amici.", a: "Io *li* invito.", missing: "li" },
+        { q: "Tu chiudi la porta.", a: "Tu *la* chiudi.", missing: "la" },
+        { q: "Loro salutano te.", a: "Loro *ti* salutano.", missing: "ti" }
       ],
       sentences2: [
         { q: "Compri il biglietto?", a: "Sì, *lo* compro.", missing: "lo" },

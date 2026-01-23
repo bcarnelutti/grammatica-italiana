@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from './LanguageContext';
 import { useChartContext } from './ChartContext';
-import { ArrowLeft, Check } from 'lucide-react';
+import { ArrowLeft, Check, ArrowRight } from 'lucide-react';
 
 const ExercisesPronomiDiretti = () => {
   const { t } = useLanguage();
   const { setView } = useChartContext();
 
   // Type definitions for our data
-  type Sentence1 = { q: string; a: string };
+  type Sentence1 = { q: string; a: string; missing: string };
   type Sentence2 = { q: string; a: string; missing: string };
 
   const sentences1 = t('practicePronomi.sentences1') as Sentence1[];
@@ -22,7 +22,7 @@ const ExercisesPronomiDiretti = () => {
   const [results2, setResults2] = useState<{ [key: number]: boolean | null }>({});
 
   const checkPart1 = (index: number) => {
-    const correct = sentences1[index].a.toLowerCase();
+    const correct = sentences1[index].missing.toLowerCase();
     const user = (answers1[index] || '').trim().toLowerCase();
     setResults1(prev => ({ ...prev, [index]: user === correct }));
   };
@@ -31,18 +31,6 @@ const ExercisesPronomiDiretti = () => {
     const correct = sentences2[index].missing.toLowerCase();
     const user = (answers2[index] || '').trim().toLowerCase();
     setResults2(prev => ({ ...prev, [index]: user === correct }));
-  };
-
-  const renderStyledSentence = (text: string) => {
-    // Replaces *text* with bold styled text
-    const parts = text.split('*');
-    return (
-      <span>
-        {parts.map((part, i) => 
-          i % 2 === 1 ? <strong key={i} className="text-indigo-600">{part}</strong> : part
-        )}
-      </span>
-    );
   };
 
   const renderFillInBlank = (text: string, userVal: string, result: boolean | null, onChange: (val: string) => void, onCheck: () => void) => {
@@ -99,28 +87,27 @@ const ExercisesPronomiDiretti = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between flex-wrap gap-4"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
-              <div className="text-lg text-slate-700 min-w-[200px]">
-                {renderStyledSentence(item.q)}
+              {/* Original Sentence */}
+              <div className="text-lg text-slate-700 font-medium">
+                {item.q}
               </div>
+
+              <ArrowRight className="hidden md:block text-slate-400" />
               
-              <div className="flex items-center gap-3">
-                <input
-                  type="text"
-                  placeholder="..."
-                  value={answers1[index] || ''}
-                  onChange={(e) => setAnswers1(prev => ({ ...prev, [index]: e.target.value }))}
-                  onKeyDown={(e) => e.key === 'Enter' && checkPart1(index)}
-                  className={`w-20 px-3 py-2 rounded-lg border outline-none text-center font-medium transition-all ${
-                    results1[index] === true ? 'border-green-500 bg-green-50 text-green-700' :
-                    results1[index] === false ? 'border-red-500 bg-red-50 text-red-700' :
-                    'border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100'
-                  }`}
-                />
+              {/* Target Sentence with Input */}
+              <div className="flex items-center gap-3 justify-end flex-grow">
+                 {renderFillInBlank(
+                   item.a, 
+                   answers1[index] || '', 
+                   results1[index] ?? null,
+                   (val) => setAnswers1(prev => ({ ...prev, [index]: val })),
+                   () => checkPart1(index)
+                 )}
                 <button
                   onClick={() => checkPart1(index)}
-                  className={`p-2 rounded-lg transition-colors ${
+                  className={`p-2 rounded-lg transition-colors ml-2 ${
                     results1[index] === true ? 'bg-green-100 text-green-600' : 'bg-slate-100 text-slate-500 hover:bg-indigo-100 hover:text-indigo-600'
                   }`}
                 >
