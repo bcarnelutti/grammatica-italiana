@@ -48,10 +48,15 @@ const PronomiOggettoDirettoChart = () => {
       >
         <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-8 text-white">
           <h2 className="text-3xl font-bold mb-2">{t('pronomi.oggettoDirettoTitle')}</h2>
-          <div className="flex items-start gap-3 mt-4 bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-            <Info className="flex-shrink-0 mt-1" />
-            <p className="text-indigo-50 leading-relaxed">
-              {t('pronomi.oggettoDirettoDesc')}
+          <div className="flex items-start gap-3 mt-4 bg-white/10 p-4 rounded-xl backdrop-blur-sm flex-col">
+            <div className="flex items-start gap-3">
+              <Info className="flex-shrink-0 mt-1" />
+              <p className="text-indigo-50 leading-relaxed">
+                {t('pronomi.oggettoDirettoDesc')}
+              </p>
+            </div>
+            <p className="text-indigo-100 text-sm mt-2 font-medium italic border-t border-white/10 pt-2 w-full">
+              {t('pronomi.explanationExample')}
             </p>
           </div>
         </div>
