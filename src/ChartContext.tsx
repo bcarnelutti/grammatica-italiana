@@ -11,6 +11,8 @@ export type ViewState =
   | 'verbs_congiuntivo_presente'
   | 'verbs_congiuntivo_passato'
   | 'verbs_reflexive'
+  | 'pronomi_menu'
+  | 'pronomi_oggetto_diretto'
   | 'prepositions'
   | 'vocabulary_menu' 
   | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports'

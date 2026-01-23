@@ -3,6 +3,7 @@ import { Globe, Shirt, Stethoscope, Plane, GraduationCap, User, Trees, Gift, Dum
 
 import ArticlesChart from './ArticlesChart';
 import VerbsMenu from './VerbsMenu';
+import PronomiMenu from './PronomiMenu';
 import VerbsPresentChart from './VerbsPresentChart';
 import VerbsPassatoProssimoChart from './VerbsPassatoProssimoChart';
 import VerbsImperfettoChart from './VerbsImperfettoChart';
@@ -11,6 +12,7 @@ import VerbsCondizionalePresenteChart from './VerbsCondizionalePresenteChart';
 import VerbsCongiuntivoPresenteChart from './VerbsCongiuntivoPresenteChart';
 import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
+import PronomiOggettoDirettoChart from './PronomiOggettoDirettoChart';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 import Exercises from './Exercises';
@@ -38,6 +40,7 @@ const Navigation = () => {
   const { view, setView } = useChartContext();
   const { t } = useLanguage();
   const isVerbsActive = view.startsWith('verbs_');
+  const isPronomiActive = view.startsWith('pronomi_');
   const isVocabActive = view.startsWith('vocab_') || view === 'vocabulary_menu';
 
   return (
@@ -61,6 +64,16 @@ const Navigation = () => {
         }`}
       >
         {t('nav.verbs')}
+      </button>
+      <button
+        onClick={() => setView('pronomi_menu')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          isPronomiActive
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.pronomi')}
       </button>
       <button
         onClick={() => setView('prepositions')}
@@ -187,6 +200,14 @@ const MainContent = () => {
 
   if (view === 'verbs_reflexive') {
     return <VerbsReflexiveChart />;
+  }
+
+  if (view === 'pronomi_menu') {
+    return <PronomiMenu />;
+  }
+
+  if (view === 'pronomi_oggetto_diretto') {
+    return <PronomiOggettoDirettoChart />;
   }
 
   if (view === 'prepositions') {

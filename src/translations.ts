@@ -6,6 +6,7 @@ export const translations = {
     nav: {
       articles: "Articoli",
       verbs: "Verbi",
+      pronomi: "Pronomi",
       prepositions: "Preposizioni",
       vocabulary: "Vocabolario",
       exercises: "Esercizi",
@@ -37,6 +38,9 @@ export const translations = {
       congiuntivo_passato: "Congiuntivo Passato",
       reflexive: "Verbi Riflessivi",
       casa_di_essere: "La Casa di Essere"
+    },
+    pronomiMenu: {
+      oggetto_diretto: "Pronomi Oggetto Diretto"
     },
     articles: {
       definiteTitle: "Articoli Determinativi",
@@ -76,6 +80,20 @@ export const translations = {
       reflexiveNote: "I verbi riflessivi usano sempre l'ausiliare 'essere' nei tempi composti.",
       ppAgreement: "Il participio passato concorda in genere e numero con il soggetto quando si usa 'essere'."
     },
+    pronomi: {
+      oggettoDirettoTitle: "Pronomi Oggetto Diretto",
+      oggettoDirettoDesc: "I pronomi oggetto diretto (Direct Object Pronouns) sostituiscono un nome che è l'oggetto diretto del verbo. Rispondono alla domanda 'Chi?' o 'Che cosa?'. Si mettono generalmente PRIMA del verbo coniugato.",
+      list: {
+        mi: "mi (me)",
+        ti: "ti (te)",
+        lo: "lo (lui / esso)",
+        la: "la (lei / essa)",
+        ci: "ci (noi)",
+        vi: "vi (voi)",
+        li: "li (loro maschile)",
+        le: "le (loro femminile)"
+      }
+    },
     prepositions: {
       simpleTitle: "Preposizioni Semplici",
       articulatedTitle: "Preposizioni Articolate",
@@ -112,6 +130,7 @@ export const translations = {
     nav: {
       articles: "Articles",
       verbs: "Verbs",
+      pronomi: "Pronouns",
       prepositions: "Prepositions",
       vocabulary: "Vocabulary",
       exercises: "Exercises",
@@ -143,6 +162,9 @@ export const translations = {
       congiuntivo_passato: "Past Subjunctive",
       reflexive: "Reflexive Verbs",
       casa_di_essere: "La Casa di Essere"
+    },
+    pronomiMenu: {
+      oggetto_diretto: "Direct Object Pronouns"
     },
     articles: {
       definiteTitle: "Definite Articles",
@@ -181,6 +203,20 @@ export const translations = {
       irregularPPTitle: "Main Irregular Past Participles",
       reflexiveNote: "Reflexive verbs always use the auxiliary 'essere' (to be) in compound tenses.",
       ppAgreement: "The past participle agrees in gender and number with the subject when using 'essere'."
+    },
+    pronomi: {
+      oggettoDirettoTitle: "Direct Object Pronouns",
+      oggettoDirettoDesc: "Direct Object Pronouns replace a noun that is the direct object of the verb. They answer the question 'Who?' or 'What?'. They are generally placed BEFORE the conjugated verb.",
+      list: {
+        mi: "mi (me)",
+        ti: "ti (you)",
+        lo: "lo (him / it)",
+        la: "la (her / it)",
+        ci: "ci (us)",
+        vi: "vi (you all)",
+        li: "li (them masculine)",
+        le: "le (them feminine)"
+      }
     },
     prepositions: {
       simpleTitle: "Simple Prepositions",
