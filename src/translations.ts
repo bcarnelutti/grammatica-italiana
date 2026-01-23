@@ -85,8 +85,8 @@ export const translations = {
       oggettoDirettoDesc: "I pronomi oggetto diretto (Direct Object Pronouns) sostituiscono un nome che è l'oggetto diretto del verbo. Rispondono alla domanda 'Chi?' o 'Che cosa?'. Si mettono generalmente PRIMA del verbo coniugato.",
       explanationExample: "Esempio: Mangi la mela? Sì, la mangio. ('la' sostituisce 'la mela')",
       list: {
-        mi: "mi (me)",
-        ti: "ti (te)",
+        mi: "mi (io)",
+        ti: "ti (tu)",
         lo: "lo (lui / esso)",
         la: "la (lei / essa)",
         ci: "ci (noi)",
@@ -220,14 +220,14 @@ export const translations = {
       oggettoDirettoDesc: "Direct Object Pronouns replace a noun that is the direct object of the verb. They answer the question 'Who?' or 'What?'. They are generally placed BEFORE the conjugated verb.",
       explanationExample: "Example: Do you eat the apple? Yes, I eat it (Sì, la mangio).",
       list: {
-        mi: "mi (me)",
-        ti: "ti (you)",
-        lo: "lo (him / it)",
-        la: "la (her / it)",
-        ci: "ci (us)",
-        vi: "vi (you all)",
-        li: "li (them masculine)",
-        le: "le (them feminine)"
+        mi: "mi (io - me)",
+        ti: "ti (tu - you)",
+        lo: "lo (lui / it - him / it)",
+        la: "la (lei / it - her / it)",
+        ci: "ci (noi - us)",
+        vi: "vi (voi - you all)",
+        li: "li (loro - them m.)",
+        le: "le (loro - them f.)"
       },
       examples: {
         mi: "Mi vedi? (Do you see me?)",
