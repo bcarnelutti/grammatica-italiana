@@ -16,7 +16,9 @@ export type ViewState =
   | 'prepositions'
   | 'vocabulary_menu' 
   | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports'
-  | 'exercises';
+  | 'exercises'
+  | 'practice_menu'
+  | 'practice_pronomi_direct';
 
 interface ChartContextType {
   view: ViewState;

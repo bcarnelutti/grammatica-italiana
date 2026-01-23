@@ -4,6 +4,7 @@ import { Globe, Shirt, Stethoscope, Plane, GraduationCap, User, Trees, Gift, Dum
 import ArticlesChart from './ArticlesChart';
 import VerbsMenu from './VerbsMenu';
 import PronomiMenu from './PronomiMenu';
+import PracticeMenu from './PracticeMenu';
 import VerbsPresentChart from './VerbsPresentChart';
 import VerbsPassatoProssimoChart from './VerbsPassatoProssimoChart';
 import VerbsImperfettoChart from './VerbsImperfettoChart';
@@ -13,6 +14,7 @@ import VerbsCongiuntivoPresenteChart from './VerbsCongiuntivoPresenteChart';
 import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PronomiOggettoDirettoChart from './PronomiOggettoDirettoChart';
+import ExercisesPronomiDiretti from './ExercisesPronomiDiretti';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 import Exercises from './Exercises';
@@ -41,6 +43,7 @@ const Navigation = () => {
   const { t } = useLanguage();
   const isVerbsActive = view.startsWith('verbs_');
   const isPronomiActive = view.startsWith('pronomi_');
+  const isPracticeActive = view.startsWith('practice_');
   const isVocabActive = view.startsWith('vocab_') || view === 'vocabulary_menu';
 
   return (
@@ -104,6 +107,16 @@ const Navigation = () => {
         }`}
       >
         {t('nav.exercises')}
+      </button>
+      <button
+        onClick={() => setView('practice_menu')}
+        className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+          isPracticeActive
+            ? 'bg-indigo-600 text-white shadow-lg scale-105'
+            : 'bg-white text-gray-500 hover:bg-gray-50 shadow-sm'
+        }`}
+      >
+        {t('nav.practice')}
       </button>
     </div>
   );
@@ -208,6 +221,14 @@ const MainContent = () => {
 
   if (view === 'pronomi_oggetto_diretto') {
     return <PronomiOggettoDirettoChart />;
+  }
+
+  if (view === 'practice_menu') {
+    return <PracticeMenu />;
+  }
+
+  if (view === 'practice_pronomi_direct') {
+    return <ExercisesPronomiDiretti />;
   }
 
   if (view === 'prepositions') {

@@ -9,14 +9,53 @@ export const translations = {
       pronomi: "Pronomi",
       prepositions: "Preposizioni",
       vocabulary: "Vocabolario",
-      exercises: "Esercizi",
+      exercises: "Compiti ITA 202",
+      practice: "Esercizi",
       back: "Indietro"
     },
     exercises: {
-      title: "Esercizi",
+      title: "Compiti ITA 202",
       comingSoon: "Presto disponibili!",
       italian202: "Esercizi ITALIAN 202",
       lesson1: "Lezione 1"
+    },
+    practiceMenu: {
+      pronomi_direct: "Pronomi Oggetto Diretto"
+    },
+    practicePronomi: {
+      title: "Esercizi: Pronomi Oggetto Diretto",
+      part1Title: "Parte 1: Sostituzione",
+      part1Instr: "Sostituisci l'oggetto evidenziato con il pronome corretto.",
+      part2Title: "Parte 2: Domanda e Risposta",
+      part2Instr: "Completa la risposta con il pronome oggetto diretto corretto.",
+      check: "Controlla",
+      retry: "Riprova",
+      correct: "Corretto!",
+      incorrect: "Riprova.",
+      sentences1: [
+        { q: "Guardo *la TV*.", a: "La" },
+        { q: "Mangio *il panino*.", a: "Lo" },
+        { q: "Chiamo *mia madre*.", a: "La" },
+        { q: "Compro *i libri*.", a: "Li" },
+        { q: "Vedo *le ragazze*.", a: "Le" },
+        { q: "Ascolto *il professore*.", a: "Lo" },
+        { q: "Bevo *il caffè*.", a: "Lo" },
+        { q: "Invito *gli amici*.", a: "Li" },
+        { q: "Chiudo *la porta*.", a: "La" },
+        { q: "Saluto *te*.", a: "Ti" }
+      ],
+      sentences2: [
+        { q: "Compri il biglietto?", a: "Sì, *lo* compro.", missing: "lo" },
+        { q: "Mangi la pizza?", a: "Sì, *la* mangio.", missing: "la" },
+        { q: "Vedi i bambini?", a: "Sì, *li* vedo.", missing: "li" },
+        { q: "Conosci Maria?", a: "Sì, *la* conosco.", missing: "la" },
+        { q: "Scrivi le lettere?", a: "Sì, *le* scrivo.", missing: "le" },
+        { q: "Guardi la partita?", a: "Sì, *la* guardo.", missing: "la" },
+        { q: "Prendi il treno?", a: "Sì, *lo* prendo.", missing: "lo" },
+        { q: "Aspetti l'autobus?", a: "Sì, *lo* aspetto.", missing: "lo" },
+        { q: "Inviti noi?", a: "Sì, *vi* invito.", missing: "vi" },
+        { q: "Ami me?", a: "Sì, *ti* amo.", missing: "ti" }
+      ]
     },
     common: {
       masculine: "Maschile",
@@ -153,18 +192,57 @@ export const translations = {
     footer: "Created for Italian language students",
     nav: {
       articles: "Articles",
-      verbs: "Verbs",
+      verbs: "Verbi",
       pronomi: "Pronouns",
       prepositions: "Prepositions",
       vocabulary: "Vocabulary",
-      exercises: "Exercises",
+      exercises: "Compiti ITA 202",
+      practice: "Exercises",
       back: "Back"
     },
     exercises: {
-      title: "Exercises",
+      title: "Compiti ITA 202",
       comingSoon: "Coming Soon!",
       italian202: "Exercises ITALIAN 202",
       lesson1: "Lesson 1"
+    },
+    practiceMenu: {
+      pronomi_direct: "Direct Object Pronouns"
+    },
+    practicePronomi: {
+      title: "Exercises: Direct Object Pronouns",
+      part1Title: "Part 1: Substitution",
+      part1Instr: "Substitute the highlighted object with the correct pronoun.",
+      part2Title: "Part 2: Q&A",
+      part2Instr: "Complete the answer with the correct direct object pronoun.",
+      check: "Check",
+      retry: "Retry",
+      correct: "Correct!",
+      incorrect: "Retry.",
+      sentences1: [
+        { q: "Guardo *la TV*.", a: "La" },
+        { q: "Mangio *il panino*.", a: "Lo" },
+        { q: "Chiamo *mia madre*.", a: "La" },
+        { q: "Compro *i libri*.", a: "Li" },
+        { q: "Vedo *le ragazze*.", a: "Le" },
+        { q: "Ascolto *il professore*.", a: "Lo" },
+        { q: "Bevo *il caffè*.", a: "Lo" },
+        { q: "Invito *gli amici*.", a: "Li" },
+        { q: "Chiudo *la porta*.", a: "La" },
+        { q: "Saluto *te*.", a: "Ti" }
+      ],
+      sentences2: [
+        { q: "Compri il biglietto?", a: "Sì, *lo* compro.", missing: "lo" },
+        { q: "Mangi la pizza?", a: "Sì, *la* mangio.", missing: "la" },
+        { q: "Vedi i bambini?", a: "Sì, *li* vedo.", missing: "li" },
+        { q: "Conosci Maria?", a: "Sì, *la* conosco.", missing: "la" },
+        { q: "Scrivi le lettere?", a: "Sì, *le* scrivo.", missing: "le" },
+        { q: "Guardi la partita?", a: "Sì, *la* guardo.", missing: "la" },
+        { q: "Prendi il treno?", a: "Sì, *lo* prendo.", missing: "lo" },
+        { q: "Aspetti l'autobus?", a: "Sì, *lo* aspetto.", missing: "lo" },
+        { q: "Inviti noi?", a: "Sì, *vi* invito.", missing: "vi" },
+        { q: "Ami me?", a: "Sì, *ti* amo.", missing: "ti" }
+      ]
     },
     common: {
       masculine: "Masculine",
