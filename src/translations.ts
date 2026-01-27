@@ -169,6 +169,17 @@ export const translations = {
         su: "su (posizione/argomento)",
         per: "per (scopo/destinazione)",
         tra: "tra / fra (posizione/tempo)"
+      },
+      partitivo: {
+        label: "Complemento Partitivo",
+        title: "Il Complemento Partitivo",
+        explanation: "Il complemento partitivo indica una parte di un tutto o una quantità indeterminata. Si forma con la preposizione 'di' unita all'articolo determinativo (del, dello, della, dei, degli, delle).",
+        usage: "Si usa per indicare una quantità imprecisata ('un po' di', 'alcuni'). Corrisponde spesso all'inglese 'some' o 'any'.",
+        examples: [
+          "Vorrei del pane. (Vorrei un po' di pane)",
+          "Ho comprato delle mele. (Ho comprato alcune mele)",
+          "Ci sono degli studenti in classe."
+        ]
       }
     },
     vocabularyMenu: {
@@ -357,6 +368,17 @@ export const translations = {
         su: "on / about (position/topic)",
         per: "for / through (purpose/dest.)",
         tra: "between / among (pos./time)"
+      },
+      partitivo: {
+        label: "Partitive Complement",
+        title: "The Partitive Complement",
+        explanation: "The partitive complement indicates a part of a whole or an indefinite quantity. It is formed with the preposition 'di' combined with the definite article (del, dello, della, dei, degli, delle).",
+        usage: "It is used to indicate an unspecified quantity ('some', 'any'). It often replaces the plural indefinite article.",
+        examples: [
+          "Vorrei del pane. (I would like some bread)",
+          "Ho comprato delle mele. (I bought some apples)",
+          "Ci sono degli studenti in classe. (There are some students in the classroom)"
+        ]
       }
     },
     vocabularyMenu: {

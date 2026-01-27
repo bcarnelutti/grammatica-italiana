@@ -1,8 +1,9 @@
-
+import { useState } from 'react';
 import { useLanguage } from './LanguageContext';
 
 const PrepositionsChart = () => {
   const { t } = useLanguage();
+  const [showPartitivoModal, setShowPartitivoModal] = useState(false);
 
   const simplePrepositions = [
     { prep: 'di', label: 'di' },
@@ -27,6 +28,14 @@ const PrepositionsChart = () => {
                 <div key={idx} className="p-4 bg-orange-50 rounded-lg border border-orange-100">
                     <div className="text-2xl font-bold text-orange-900 mb-1">{item.prep}</div>
                     <div className="text-sm text-orange-800 mb-2">{t(`prepositions.labels.${item.label}`)}</div>
+                    {item.prep === 'di' && (
+                      <button
+                        onClick={() => setShowPartitivoModal(true)}
+                        className="mt-2 text-sm text-orange-600 hover:text-orange-800 font-medium block flex items-center gap-1 transition-colors"
+                      >
+                        <span className="text-lg">•</span> {t('prepositions.partitivo.label')}
+                      </button>
+                    )}
                 </div>
             ))}
         </div>
@@ -105,6 +114,43 @@ const PrepositionsChart = () => {
             </tbody>
         </table>
       </section>
+
+      {/* Partitivo Modal */}
+      {showPartitivoModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowPartitivoModal(false)}>
+          <div className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-2xl relative animate-in fade-in zoom-in duration-200" onClick={e => e.stopPropagation()}>
+            <button
+              onClick={() => setShowPartitivoModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+            >
+              ✕
+            </button>
+            <h3 className="text-2xl font-serif text-orange-900 mb-6 border-b border-orange-100 pb-2">{t('prepositions.partitivo.title')}</h3>
+            <div className="space-y-6 text-gray-700">
+              <div>
+                <p className="bg-orange-50 p-4 rounded-lg border border-orange-100 text-lg leading-relaxed text-orange-900">
+                  {t('prepositions.partitivo.explanation')}
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-orange-800 mb-2 uppercase text-sm tracking-wide">{t('common.usage')}</h4>
+                <p className="text-gray-600">{t('prepositions.partitivo.usage')}</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-orange-800 mb-3 uppercase text-sm tracking-wide">{t('common.example')}</h4>
+                <ul className="list-none space-y-3">
+                  {(t('prepositions.partitivo.examples') as unknown as string[]).map((ex, i) => (
+                    <li key={i} className="flex gap-3 items-start">
+                      <span className="text-orange-400 mt-1">➜</span>
+                      <span className="bg-gray-50 px-3 py-1 rounded text-gray-800">{ex}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
