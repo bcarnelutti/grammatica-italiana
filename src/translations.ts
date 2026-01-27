@@ -67,13 +67,18 @@ export const translations = {
       incorrect: "Riprova.",
       sentences: [
         { q: "Vorrei ___ pane, per favore.", a: "del" },
+        { q: "Vorrei un chilo ___ arance.", a: "di" },
         { q: "Ho comprato ___ mele al mercato.", a: "delle" },
+        { q: "Prendo un bicchiere ___ vino rosso.", a: "di" },
         { q: "Ci sono ___ studenti in aula.", a: "degli" },
         { q: "Bevo ___ acqua frizzante.", a: "dell'" },
+        { q: "C'è un po' ___ confusione qui.", a: "di" },
         { q: "Aggiungi ___ zucchero al caffè.", a: "dello" },
         { q: "Cerco ___ amici sinceri.", a: "degli" },
+        { q: "Ho comprato una scatola ___ biscotti.", a: "di" },
         { q: "Vuoi ___ olio nell'insalata?", a: "dell'" },
         { q: "Hanno comprato ___ zaini nuovi.", a: "degli" },
+        { q: "Mi dai un pezzo ___ formaggio?", a: "di" },
         { q: "Hai ___ buone idee per la festa?", a: "delle" },
         { q: "Ogni mattina bevo ___ latte caldo.", a: "del" }
       ]
@@ -286,13 +291,18 @@ export const translations = {
       incorrect: "Retry.",
       sentences: [
         { q: "Vorrei ___ pane, per favore.", a: "del" },
+        { q: "Vorrei un chilo ___ arance.", a: "di" },
         { q: "Ho comprato ___ mele al mercato.", a: "delle" },
+        { q: "Prendo un bicchiere ___ vino rosso.", a: "di" },
         { q: "Ci sono ___ studenti in aula.", a: "degli" },
         { q: "Bevo ___ acqua frizzante.", a: "dell'" },
+        { q: "C'è un po' ___ confusione qui.", a: "di" },
         { q: "Aggiungi ___ zucchero al caffè.", a: "dello" },
         { q: "Cerco ___ amici sinceri.", a: "degli" },
+        { q: "Ho comprato una scatola ___ biscotti.", a: "di" },
         { q: "Vuoi ___ olio nell'insalata?", a: "dell'" },
         { q: "Hanno comprato ___ zaini nuovi.", a: "degli" },
+        { q: "Mi dai un pezzo ___ formaggio?", a: "di" },
         { q: "Hai ___ buone idee per la festa?", a: "delle" },
         { q: "Ogni mattina bevo ___ latte caldo.", a: "del" }
       ]
