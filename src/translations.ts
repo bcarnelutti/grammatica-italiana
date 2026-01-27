@@ -285,16 +285,16 @@ export const translations = {
       correct: "Correct!",
       incorrect: "Retry.",
       sentences: [
-        { q: "Vorrei ___ pane, per favore. (I would like some bread)", a: "del" },
-        { q: "Ho comprato ___ mele al mercato. (I bought some apples)", a: "delle" },
-        { q: "Ci sono ___ studenti in aula. (There are some students)", a: "degli" },
-        { q: "Bevo ___ acqua frizzante. (I drink some sparkling water)", a: "dell'" },
-        { q: "Aggiungi ___ zucchero al caffè. (Add some sugar)", a: "dello" },
-        { q: "Cerco ___ amici sinceri. (I'm looking for some sincere friends)", a: "degli" },
-        { q: "Vuoi ___ olio nell'insalata? (Do you want some oil?)", a: "dell'" },
-        { q: "Hanno comprato ___ zaini nuovi. (They bought some new backpacks)", a: "degli" },
-        { q: "Hai ___ buone idee per la festa? (Do you have any good ideas?)", a: "delle" },
-        { q: "Ogni mattina bevo ___ latte caldo. (I drink some hot milk)", a: "del" }
+        { q: "Vorrei ___ pane, per favore.", a: "del" },
+        { q: "Ho comprato ___ mele al mercato.", a: "delle" },
+        { q: "Ci sono ___ studenti in aula.", a: "degli" },
+        { q: "Bevo ___ acqua frizzante.", a: "dell'" },
+        { q: "Aggiungi ___ zucchero al caffè.", a: "dello" },
+        { q: "Cerco ___ amici sinceri.", a: "degli" },
+        { q: "Vuoi ___ olio nell'insalata?", a: "dell'" },
+        { q: "Hanno comprato ___ zaini nuovi.", a: "degli" },
+        { q: "Hai ___ buone idee per la festa?", a: "delle" },
+        { q: "Ogni mattina bevo ___ latte caldo.", a: "del" }
       ]
     },
     common: {
