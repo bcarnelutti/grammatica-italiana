@@ -20,7 +20,8 @@ export const translations = {
       lesson1: "Lezione 1"
     },
     practiceMenu: {
-      pronomi_direct: "Pronomi Oggetto Diretto"
+      pronomi_direct: "Pronomi Oggetto Diretto",
+      partitivo: "Complemento Partitivo"
     },
     practicePronomi: {
       title: "Esercizi: Pronomi Oggetto Diretto",
@@ -55,6 +56,26 @@ export const translations = {
         { q: "Aspetti l'autobus?", a: "Sì, *lo* aspetto.", missing: "lo" },
         { q: "Inviti noi?", a: "Sì, *vi* invito.", missing: "vi" },
         { q: "Ami me?", a: "Sì, *ti* amo.", missing: "ti" }
+      ]
+    },
+    practicePartitivo: {
+      title: "Esercizi: Complemento Partitivo",
+      instruction: "Completa le frasi con il complemento partitivo corretto (preposizione articolata: del, dello, dell', della, dei, degli, delle).",
+      check: "Controlla",
+      retry: "Riprova",
+      correct: "Corretto!",
+      incorrect: "Riprova.",
+      sentences: [
+        { q: "Vorrei ___ pane, per favore.", a: "del" },
+        { q: "Ho comprato ___ mele al mercato.", a: "delle" },
+        { q: "Ci sono ___ studenti in aula.", a: "degli" },
+        { q: "Bevo ___ acqua frizzante.", a: "dell'" },
+        { q: "Aggiungi ___ zucchero al caffè.", a: "dello" },
+        { q: "Cerco ___ amici sinceri.", a: "degli" },
+        { q: "Vuoi ___ olio nell'insalata?", a: "dell'" },
+        { q: "Hanno comprato ___ zaini nuovi.", a: "degli" },
+        { q: "Hai ___ buone idee per la festa?", a: "delle" },
+        { q: "Ogni mattina bevo ___ latte caldo.", a: "del" }
       ]
     },
     common: {
@@ -174,7 +195,7 @@ export const translations = {
         label: "Complemento Partitivo",
         title: "Il Complemento Partitivo",
         explanation: "Il complemento partitivo indica una parte di un tutto o una quantità indeterminata. Si forma con la preposizione 'di' unita all'articolo determinativo (del, dello, della, dei, degli, delle).",
-        usage: "Si usa per indicare una quantità imprecisata ('un po' di', 'alcuni'). Corrisponde spesso all'inglese 'some' o 'any'.",
+        usage: "Si usa per indicare una quantità imprecisata ('un po' di', 'alcuni'). Corrisponde spesso all'inglese 'some' o 'any'.\n\n**Nota: 'Di' semplice vs Preposizione Articolata**\n- Si usa la preposizione semplice **'di'** dopo espressioni di quantità precise (es. 'un bicchiere *di* vino', 'un po' *di* pane', 'molto *di* più').\n- Si usa la preposizione articolata (**del, dello, della**, ecc.) quando indica una quantità indeterminata e funge da articolo partitivo ('Vorrei *del* pane' = un po' di pane).",
         examples: [
           "Vorrei del pane. (Vorrei un po' di pane)",
           "Ho comprato delle mele. (Ho comprato alcune mele)",
@@ -218,7 +239,8 @@ export const translations = {
       lesson1: "Lesson 1"
     },
     practiceMenu: {
-      pronomi_direct: "Direct Object Pronouns"
+      pronomi_direct: "Direct Object Pronouns",
+      partitivo: "Partitive Complement"
     },
     practicePronomi: {
       title: "Exercises: Direct Object Pronouns",
@@ -253,6 +275,26 @@ export const translations = {
         { q: "Aspetti l'autobus?", a: "Sì, *lo* aspetto.", missing: "lo" },
         { q: "Inviti noi?", a: "Sì, *vi* invito.", missing: "vi" },
         { q: "Ami me?", a: "Sì, *ti* amo.", missing: "ti" }
+      ]
+    },
+    practicePartitivo: {
+      title: "Exercises: Partitive Complement",
+      instruction: "Complete the sentences with the correct partitive complement (articulated preposition: del, dello, dell', della, dei, degli, delle).",
+      check: "Check",
+      retry: "Retry",
+      correct: "Correct!",
+      incorrect: "Retry.",
+      sentences: [
+        { q: "Vorrei ___ pane, per favore. (I would like some bread)", a: "del" },
+        { q: "Ho comprato ___ mele al mercato. (I bought some apples)", a: "delle" },
+        { q: "Ci sono ___ studenti in aula. (There are some students)", a: "degli" },
+        { q: "Bevo ___ acqua frizzante. (I drink some sparkling water)", a: "dell'" },
+        { q: "Aggiungi ___ zucchero al caffè. (Add some sugar)", a: "dello" },
+        { q: "Cerco ___ amici sinceri. (I'm looking for some sincere friends)", a: "degli" },
+        { q: "Vuoi ___ olio nell'insalata? (Do you want some oil?)", a: "dell'" },
+        { q: "Hanno comprato ___ zaini nuovi. (They bought some new backpacks)", a: "degli" },
+        { q: "Hai ___ buone idee per la festa? (Do you have any good ideas?)", a: "delle" },
+        { q: "Ogni mattina bevo ___ latte caldo. (I drink some hot milk)", a: "del" }
       ]
     },
     common: {
@@ -373,7 +415,7 @@ export const translations = {
         label: "Partitive Complement",
         title: "The Partitive Complement",
         explanation: "The partitive complement indicates a part of a whole or an indefinite quantity. It is formed with the preposition 'di' combined with the definite article (del, dello, della, dei, degli, delle).",
-        usage: "It is used to indicate an unspecified quantity ('some', 'any'). It often replaces the plural indefinite article.",
+        usage: "It is used to indicate an unspecified quantity ('some', 'any'). It often replaces the plural indefinite article.\n\n**Note: Simple 'Di' vs Articulated Preposition**\n- Use the simple preposition **'di'** after precise quantity expressions (e.g., 'un bicchiere *di* vino' - a glass of wine, 'un po' *di* pane' - a bit of bread).\n- Use the articulated preposition (**del, dello, della**, etc.) when it indicates an indefinite quantity and acts as a partitive article ('Vorrei *del* pane' = I would like *some* bread).",
         examples: [
           "Vorrei del pane. (I would like some bread)",
           "Ho comprato delle mele. (I bought some apples)",

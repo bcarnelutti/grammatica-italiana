@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useChartContext, type ViewState } from './ChartContext';
 import { useLanguage } from './LanguageContext';
-import { Target } from 'lucide-react';
+import { Target, PieChart } from 'lucide-react';
 
 const PracticeMenu = () => {
   const { setView } = useChartContext();
@@ -9,6 +9,7 @@ const PracticeMenu = () => {
 
   const menuItems = [
     { id: 'practice_pronomi_direct', label: t('practiceMenu.pronomi_direct'), icon: Target, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+    { id: 'practice_partitivo', label: t('practiceMenu.partitivo'), icon: PieChart, color: 'text-orange-600', bg: 'bg-orange-50' },
   ] as const;
 
   return (

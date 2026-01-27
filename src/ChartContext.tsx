@@ -18,7 +18,8 @@ export type ViewState =
   | 'vocab_clothing' | 'vocab_health' | 'vocab_travel' | 'vocab_education' | 'vocab_body' | 'vocab_nature' | 'vocab_celebrations' | 'vocab_sports'
   | 'exercises'
   | 'practice_menu'
-  | 'practice_pronomi_direct';
+  | 'practice_pronomi_direct'
+  | 'practice_partitivo';
 
 interface ChartContextType {
   view: ViewState;

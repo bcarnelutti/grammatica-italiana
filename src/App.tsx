@@ -15,6 +15,7 @@ import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PronomiOggettoDirettoChart from './PronomiOggettoDirettoChart';
 import ExercisesPronomiDiretti from './ExercisesPronomiDiretti';
+import ExercisesPartitivo from './ExercisesPartitivo';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
 import Exercises from './Exercises';
@@ -229,6 +230,10 @@ const MainContent = () => {
 
   if (view === 'practice_pronomi_direct') {
     return <ExercisesPronomiDiretti />;
+  }
+
+  if (view === 'practice_partitivo') {
+    return <ExercisesPartitivo />;
   }
 
   if (view === 'prepositions') {
