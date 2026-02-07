@@ -24,7 +24,7 @@ An interactive web application designed to help English speakers learn Italian g
 
 ## Deployment
 *   **Automatic Deployment:** The project is configured with GitHub Actions to automatically deploy to GitHub Pages on every push to the `main` branch. 
-*   **Workflow:** Every code modification must be committed and pushed to trigger the update on: https://bcarnelutti.github.io/grammatica-italiana/
+*   **Workflow:** Every code modification must be committed and pushed to trigger the update on: https://gi.beatricecarnelutti.com
 
 ## Architecture & Tech Stack
 *   **Framework:** React 19
@@ -45,8 +45,8 @@ An interactive web application designed to help English speakers learn Italian g
 *   `src/ArticlesChart.tsx`: Logic for Italian articles.
 *   `src/VerbsMenu.tsx`: Sub-navigation for the verbs section.
 *   `src/Verbs...Chart.tsx`: Specialized components for each verb tense.
-*   `src/Exercises.tsx`: Container for the exercises section.
-*   `src/Lesson1Exercises.tsx`: Interactive exercise items and validation logic.
+*   `src/exercises/Exercises.tsx`: Container for the exercises section.
+*   `src/exercises/Lesson1Exercises.tsx`: Interactive exercise items and validation logic.
 
 ## Licensing
 *   **Web App:** MIT License.
