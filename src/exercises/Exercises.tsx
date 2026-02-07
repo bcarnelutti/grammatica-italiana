@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from './LanguageContext';
+import { useLanguage } from '../LanguageContext';
 import { Pencil, ChevronDown, ChevronUp, Book, FileText } from 'lucide-react';
 import Lesson1Exercises from './Lesson1Exercises';
 

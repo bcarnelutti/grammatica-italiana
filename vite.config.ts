@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/grammatica-italiana/' : '/',
+export default defineConfig(() => ({
+  base: '/',
   server: {
     host: '127.0.0.1',
     port: 5177,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from './LanguageContext';
-import { useChartContext } from './ChartContext';
+import { useLanguage } from '../LanguageContext';
+import { useChartContext } from '../ChartContext';
 import { ArrowLeft, Check, ArrowRight } from 'lucide-react';
 
 const ExercisesPronomiDiretti = () => {

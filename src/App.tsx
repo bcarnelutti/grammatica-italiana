@@ -14,11 +14,11 @@ import VerbsCongiuntivoPresenteChart from './VerbsCongiuntivoPresenteChart';
 import VerbsCongiuntivoPassatoChart from './VerbsCongiuntivoPassatoChart';
 import VerbsReflexiveChart from './VerbsReflexiveChart';
 import PronomiOggettoDirettoChart from './PronomiOggettoDirettoChart';
-import ExercisesPronomiDiretti from './ExercisesPronomiDiretti';
-import ExercisesPartitivo from './ExercisesPartitivo';
+import ExercisesPronomiDiretti from './exercises/ExercisesPronomiDiretti';
+import ExercisesPartitivo from './exercises/ExercisesPartitivo';
 import PrepositionsChart from './PrepositionsChart';
 import VocabularyChart from './VocabularyChart';
-import Exercises from './Exercises';
+import Exercises from './exercises/Exercises';
 
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import { ChartProvider, useChartContext, type ViewState } from './ChartContext';
